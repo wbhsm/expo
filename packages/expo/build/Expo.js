@@ -6,7 +6,7 @@ export { default as registerRootComponent } from './launch/registerRootComponent
 // The following should all be extracted from this package
 export { default as DangerZone } from './DangerZone';
 // @ts-ignore
-export { Linking, Notifications } from './deprecated';
+export { Linking } from './deprecated';
 // @ts-ignore
 export { 
 // @ts-ignore

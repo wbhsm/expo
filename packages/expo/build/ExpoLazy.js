@@ -27,12 +27,6 @@ Object.defineProperty(exports, "Linking", {
     return _deprecated.Linking;
   }
 });
-Object.defineProperty(exports, "Notifications", {
-  enumerable: true,
-  get: function () {
-    return _deprecated.Notifications;
-  }
-});
 Object.defineProperty(exports, "Accelerometer", {
   enumerable: true,
   get: function () {
