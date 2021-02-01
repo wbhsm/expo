@@ -10,7 +10,7 @@ export { default as registerRootComponent } from './launch/registerRootComponent
 export { default as DangerZone } from './DangerZone';
 
 // @ts-ignore
-export { Linking, Notifications } from './deprecated';
+export { Linking } from './deprecated';
 
 // @ts-ignore
 export {

@@ -1,7 +1,6 @@
 import * as ErrorRecovery from 'expo-error-recovery';
 import * as React from 'react';
 
-import Notifications from '../Notifications/Notifications';
 import { InitialProps } from './withExpoRoot.types';
 
 export default function withExpoRoot<P extends InitialProps>(
@@ -10,11 +9,6 @@ export default function withExpoRoot<P extends InitialProps>(
   return function ExpoRoot(props: P) {
     const didInitialize = React.useRef(false);
     if (!didInitialize.current) {
-      const { exp } = props;
-      if (exp.notification) {
-        Notifications._setInitialNotification(exp.notification);
-      }
-
       didInitialize.current = true;
     }
 
