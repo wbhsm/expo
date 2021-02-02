@@ -2,12 +2,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, EXUpdatesStructuredHeadersFieldType) {
+  EXUpdatesStructuredHeadersFieldTypeDictionary,
+  EXUpdatesStructuredHeadersFieldTypeList,
+  EXUpdatesStructuredHeadersFieldTypeItem
+};
+
 @interface EXUpdatesStructuredHeaders : NSObject
 
-- (instancetype)initWithRawInput:(NSString *)raw;
-
-
-- (nullable id)parseItemForTest;
+- (instancetype)initWithRawInput:(NSString *)raw fieldType:(EXUpdatesStructuredHeadersFieldType)fieldType;
+- (nullable id)parseStructuredFieldsWithError:(NSError ** _Nullable)error;
 
 @end
 

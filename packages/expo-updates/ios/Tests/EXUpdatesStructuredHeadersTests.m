@@ -22,10 +22,11 @@
   [super tearDown];
 }
 
-//- (void)test
-//{
-//  NSString *dictionaryTestsJson = @"[{\"name\": \"basic dictionary\",\"raw\": [\"en=\\\"Applepie\\\", da=:w4ZibGV0w6ZydGUK:\"],\"header_type\": \"dictionary\",\"expected\": {\"en\": [\"Applepie\", {}], \"da\": [{\"__type\": \"binary\", \"value\": \"YODGE3DFOTB2M4TUMUFA====\"},{}]}},{\"name\": \"empty dictionary\",\"raw\": [\"\"],\"header_type\": \"dictionary\",\"expected\": {},\"canonical\": []},{\"name\": \"single item dictionary\",\"raw\": [\"a=1\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}]}},{\"name\": \"list item dictionary\",\"raw\": [\"a=(1 2)\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [[[1, {}], [2, {}]], {}]}},{\"name\": \"single list item dictionary\",\"raw\": [\"a=(1)\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [[[1, {}]], {}]}},{\"name\": \"empty list item dictionary\",\"raw\": [\"a=()\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [[], {}]}},{\"name\": \"no whitespace dictionary\",\"raw\": [\"a=1,b=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}], \"b\": [2, {}]},\"canonical\": [\"a=1, b=2\"]},{\"name\": \"extra whitespace dictionary\",\"raw\": [\"a=1 ,b=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}], \"b\": [2, {}]},\"canonical\": [\"a=1, b=2\"]},{\"name\": \"tab separated dictionary\",\"raw\": [\"a=1\\t,\\tb=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}], \"b\": [2, {}]},\"canonical\": [\"a=1, b=2\"]},{\"name\": \"leading whitespace dictionary\",\"raw\": [\" a=1 ,b=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}], \"b\": [2, {}]},\"canonical\": [\"a=1, b=2\"]},{\"name\": \"whitespace before = dictionary\",\"raw\": [\"a =1, b=2\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"whitespace after = dictionary\",\"raw\": [\"a=1, b= 2\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"two lines dictionary\",\"raw\": [\"a=1\", \"b=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}], \"b\": [2, {}]},\"canonical\": [\"a=1, b=2\"]},{\"name\": \"missing value dictionary\",\"raw\": [\"a=1, b, c=3\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1,{}], \"b\": [true, {}], \"c\": [3, {}]}},{\"name\": \"all missing value dictionary\",\"raw\": [\"a, b, c\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [true,{}], \"b\": [true, {}], \"c\": [true, {}]}},{\"name\": \"start missing value dictionary\",\"raw\": [\"a, b=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [true,{}], \"b\": [2, {}]}},{\"name\": \"end missing value dictionary\",\"raw\": [\"a=1, b\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1,{}], \"b\": [true, {}]}},{\"name\": \"missing value with params dictionary\",\"raw\": [\"a=1, b;foo=9, c=3\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1,{}], \"b\": [true, {\"foo\": 9}], \"c\": [3, {}]}},{\"name\": \"explicit true value with params dictionary\",\"raw\": [\"a=1, b=?1;foo=9, c=3\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1,{}], \"b\": [true, {\"foo\": 9}], \"c\": [3, {}]},\"canonical\": [\"a=1, b;foo=9, c=3\"]},{\"name\": \"trailing comma dictionary\",\"raw\": [\"a=1, b=2,\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"empty item dictionary\",\"raw\": [\"a=1,,b=2,\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"duplicate key dictionary\",\"raw\": [\"a=1,b=2,a=3\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [3, {}], \"b\": [2, {}]},\"canonical\": [\"a=3, b=2\"]},{\"name\": \"numeric key dictionary\",\"raw\": [\"a=1,1b=2,a=1\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"uppercase key dictionary\",\"raw\": [\"a=1,B=2,a=1\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"bad key dictionary\",\"raw\": [\"a=1,b!=2,a=1\"],\"header_type\": \"dictionary\",\"must_fail\": true}]";
-//}
+- (void)testDictionaries
+{
+  NSString *dictionaryTestsJson = @"[{\"name\": \"basic dictionary\",\"raw\": [\"en=\\\"Applepie\\\", da=:w4ZibGV0w6ZydGUK:\"],\"header_type\": \"dictionary\",\"expected\": {\"en\": [\"Applepie\", {}], \"da\": [{\"__type\": \"binary\", \"value\": \"YODGE3DFOTB2M4TUMUFA====\"},{}]}},{\"name\": \"empty dictionary\",\"raw\": [\"\"],\"header_type\": \"dictionary\",\"expected\": {},\"canonical\": []},{\"name\": \"single item dictionary\",\"raw\": [\"a=1\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}]}},{\"name\": \"list item dictionary\",\"raw\": [\"a=(1 2)\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [[[1, {}], [2, {}]], {}]}},{\"name\": \"single list item dictionary\",\"raw\": [\"a=(1)\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [[[1, {}]], {}]}},{\"name\": \"empty list item dictionary\",\"raw\": [\"a=()\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [[], {}]}},{\"name\": \"no whitespace dictionary\",\"raw\": [\"a=1,b=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}], \"b\": [2, {}]},\"canonical\": [\"a=1, b=2\"]},{\"name\": \"extra whitespace dictionary\",\"raw\": [\"a=1 ,b=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}], \"b\": [2, {}]},\"canonical\": [\"a=1, b=2\"]},{\"name\": \"tab separated dictionary\",\"raw\": [\"a=1\\t,\\tb=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}], \"b\": [2, {}]},\"canonical\": [\"a=1, b=2\"]},{\"name\": \"leading whitespace dictionary\",\"raw\": [\" a=1 ,b=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}], \"b\": [2, {}]},\"canonical\": [\"a=1, b=2\"]},{\"name\": \"whitespace before = dictionary\",\"raw\": [\"a =1, b=2\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"whitespace after = dictionary\",\"raw\": [\"a=1, b= 2\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"two lines dictionary\",\"raw\": [\"a=1\", \"b=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}], \"b\": [2, {}]},\"canonical\": [\"a=1, b=2\"]},{\"name\": \"missing value dictionary\",\"raw\": [\"a=1, b, c=3\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1,{}], \"b\": [true, {}], \"c\": [3, {}]}},{\"name\": \"all missing value dictionary\",\"raw\": [\"a, b, c\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [true,{}], \"b\": [true, {}], \"c\": [true, {}]}},{\"name\": \"start missing value dictionary\",\"raw\": [\"a, b=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [true,{}], \"b\": [2, {}]}},{\"name\": \"end missing value dictionary\",\"raw\": [\"a=1, b\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1,{}], \"b\": [true, {}]}},{\"name\": \"missing value with params dictionary\",\"raw\": [\"a=1, b;foo=9, c=3\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1,{}], \"b\": [true, {\"foo\": 9}], \"c\": [3, {}]}},{\"name\": \"explicit true value with params dictionary\",\"raw\": [\"a=1, b=?1;foo=9, c=3\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1,{}], \"b\": [true, {\"foo\": 9}], \"c\": [3, {}]},\"canonical\": [\"a=1, b;foo=9, c=3\"]},{\"name\": \"trailing comma dictionary\",\"raw\": [\"a=1, b=2,\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"empty item dictionary\",\"raw\": [\"a=1,,b=2,\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"duplicate key dictionary\",\"raw\": [\"a=1,b=2,a=3\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [3, {}], \"b\": [2, {}]},\"canonical\": [\"a=3, b=2\"]},{\"name\": \"numeric key dictionary\",\"raw\": [\"a=1,1b=2,a=1\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"uppercase key dictionary\",\"raw\": [\"a=1,B=2,a=1\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"bad key dictionary\",\"raw\": [\"a=1,b!=2,a=1\"],\"header_type\": \"dictionary\",\"must_fail\": true}]";
+  [self runTestArray:dictionaryTestsJson];
+}
 
 - (void)testNumbers
 {
@@ -58,29 +59,66 @@
   XCTAssertNil(error);
 
   for (NSDictionary *test in tests) {
-    EXUpdatesStructuredHeaders *parser = [[EXUpdatesStructuredHeaders alloc] initWithRawInput:test[@"raw"][0]];
+    // When generating input_bytes, parsers MUST combine all field lines in the same section (header or trailer)
+    // that case-insensitively match the field name into one comma-separated field-value, as per [RFC7230], Section 3.2.2;
+    // this assures that the entire field value is processed correctly.
+    NSString *rawInput = [(NSArray *)test[@"raw"] componentsJoinedByString:@","];
+    EXUpdatesStructuredHeaders *parser = [[EXUpdatesStructuredHeaders alloc] initWithRawInput:rawInput fieldType:[self fieldTypeWithString:test[@"header_type"]]];
     if ([(NSNumber *)test[@"must_fail"] boolValue]) {
-      XCTAssertNil([parser parseItemForTest]);
+      NSError *error;
+      XCTAssertNil([parser parseStructuredFieldsWithError:&error]);
+      XCTAssertNotNil(error);
     } else {
-      id actual = [parser parseItemForTest];
-      id expected = test[@"expected"];
-      if ([expected isKindOfClass:[NSArray class]] && [expected[0] isKindOfClass:[NSDictionary class]] && [@"binary" isEqualToString:expected[0][@"__type"]]) {
-        NSMutableArray *processed = [NSMutableArray arrayWithArray:expected];
-        processed[0] = [[self class] dataFromBase32String:expected[0][@"value"]];
-        expected = [processed copy];
-      }
+      NSError *error;
+      id actual = [parser parseStructuredFieldsWithError:&error];
+      XCTAssertNil(error);
 
+      id expected = test[@"expected"];
       if ([(NSNumber *)test[@"can_fail"] boolValue]) {
         XCTAssert(!actual || [actual isEqual:expected]);
       } else {
-        XCTAssertEqualObjects(expected, actual);
+        XCTAssertEqualObjects(actual, expected);
       }
     }
   }
 }
 
+- (EXUpdatesStructuredHeadersFieldType)fieldTypeWithString:(NSString *)string
+{
+  if ([@"dictionary" isEqualToString:string]) {
+    return EXUpdatesStructuredHeadersFieldTypeDictionary;
+  } else if ([@"list" isEqualToString:string]) {
+    return EXUpdatesStructuredHeadersFieldTypeList;
+  } else if ([@"item" isEqualToString:string]) {
+    return EXUpdatesStructuredHeadersFieldTypeItem;
+  } else {
+    XCTAssert(NO, @"unexpected header_type");
+  }
+}
+
+@end
+
+@implementation NSData (EXUpdatesStructuredHeadersTests)
+
+- (BOOL)isEqual:(id)object
+{
+  if ([object isKindOfClass:[NSDictionary class]] && [@"binary" isEqualToString:object[@"__type"]]) {
+    NSData *dataToCompare = [[self class] dataFromBase32String:object[@"value"]];
+    return [self isEqualToData:dataToCompare];
+  }
+
+  // plain isEqual implementation
+  if (self == object) {
+    return YES;
+  }
+  if (![object isKindOfClass:[NSData class]]) {
+    return NO;
+  }
+  return [self isEqualToData:object];
+}
+
 // https://github.com/ekscrypto/Base32/blob/77e2871b17d71891a6e56e007221d84d77e566b9/Base32/MF_Base32Additions.m
-+(NSData *)dataFromBase32String:(NSString *)encoding
++ (NSData *)dataFromBase32String:(NSString *)encoding
 {
   NSData *data = nil;
   unsigned char *decodedBytes = NULL;

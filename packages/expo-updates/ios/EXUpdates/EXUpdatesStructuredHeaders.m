@@ -5,12 +5,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, EXUpdatesStructuredHeadersNumberType) {
-  EXUpdatesStructuredHeadersNumberTypeInteger = 0,
-  EXUpdatesStructuredHeadersNumberTypeDecimal = 1
+  EXUpdatesStructuredHeadersNumberTypeInteger,
+  EXUpdatesStructuredHeadersNumberTypeDecimal
 };
 
 @interface EXUpdatesStructuredHeaders ()
 
+@property (nonatomic, assign) EXUpdatesStructuredHeadersFieldType fieldType;
 @property (nonatomic, strong) NSString *raw;
 @property (nonatomic, assign) NSUInteger position;
 
@@ -18,20 +19,158 @@ typedef NS_ENUM(NSInteger, EXUpdatesStructuredHeadersNumberType) {
 
 @implementation EXUpdatesStructuredHeaders
 
-- (instancetype)initWithRawInput:(NSString *)raw
+- (instancetype)initWithRawInput:(NSString *)raw fieldType:(EXUpdatesStructuredHeadersFieldType)fieldType
 {
   if (self = [super init]) {
+    _fieldType = fieldType;
     _raw = raw;
     _position = 0;
   }
   return self;
 }
 
-- (nullable id)parseItemForTest
+- (nullable id)parseStructuredFieldsWithError:(NSError ** _Nullable)error
 {
-  NSData *parsed = [self _parseAnItemWithError:nil];
+  // 4.2
+  // TODO: ASCII
   [self removeLeadingSP];
-  return ![self hasRemaining] ? parsed : nil;
+
+  id output;
+  switch (_fieldType) {
+    case EXUpdatesStructuredHeadersFieldTypeList:
+      output = [self _parseAListWithError:error];
+      break;
+    case EXUpdatesStructuredHeadersFieldTypeDictionary:
+      output = [self _parseADictionaryWithError:error];
+      break;
+    case EXUpdatesStructuredHeadersFieldTypeItem:
+      output = [self _parseAnItemWithError:error];
+      break;
+    default:
+      if (error) *error = [self errorWithMessage:@"Invalid field type given to parser"];
+      break;
+  }
+  if (!output) return nil;
+
+  [self removeLeadingSP];
+  if ([self hasRemaining]) {
+    if (error) *error = [self errorWithMessage:@"Failed to parse structured fields; unexpected trailing characters found"];
+    return nil;
+  }
+
+  return output;
+}
+
+- (nullable NSArray *)_parseAListWithError:(NSError ** _Nullable)error
+{
+  // 4.2.1
+  NSMutableArray *members = [NSMutableArray new];
+  while ([self hasRemaining]) {
+    NSArray *itemOrInnerList = [self _parseAnItemOrInnerListWithError:error];
+    if (!itemOrInnerList) return nil;
+    [members addObject:itemOrInnerList];
+
+    [self removeLeadingOWS];
+    if (![self hasRemaining]) {
+      return [members copy];
+    }
+
+    if ([self consume] != ',') {
+      if (error) *error = [self errorWithMessage:@"Failed to parse list; invalid character after list member"];
+      return nil;
+    }
+
+    [self removeLeadingOWS];
+    if (![self hasRemaining]) {
+      if (error) *error = [self errorWithMessage:@"List cannot have a trailing comma"];
+      return nil;
+    }
+  }
+
+  return [members copy];
+}
+
+- (nullable NSArray *)_parseAnItemOrInnerListWithError:(NSError ** _Nullable)error
+{
+  // 4.2.1.1
+  if ([self compareNextChar:'(']) {
+    return [self _parseAnInnerListWithError:error];
+  } else {
+    return [self _parseAnItemWithError:error];
+  }
+}
+
+- (nullable NSArray *)_parseAnInnerListWithError:(NSError ** _Nullable)error
+{
+  // 4.2.1.2
+  if ([self consume] != '(') {
+    if (error) *error = [self errorWithMessage:@"Inner list must start with '('"];
+    return nil;
+  }
+
+  NSMutableArray *innerList = [NSMutableArray new];
+  while ([self hasRemaining]) {
+    [self removeLeadingSP];
+
+    if ([self compareNextChar:')']) {
+      [self advance];
+      NSDictionary *parameters = [self _parseParametersWithError:error];
+      if (!parameters) return nil;
+      return @[[innerList copy], parameters];
+    }
+
+    id item = [self _parseAnItemWithError:error];
+    if (!item) return nil;
+    [innerList addObject:item];
+
+    if (![self compareNextCharWithSet:@" )"]) {
+      if (error) *error = [self errorWithMessage:@"Failed to parse inner list; invalid character after item"];
+      return nil;
+    }
+  }
+
+  if (error) *error = [self errorWithMessage:@"Failed to parse inner list; end of list not found"];
+  return nil;
+}
+
+- (nullable NSDictionary *)_parseADictionaryWithError:(NSError ** _Nullable)error
+{
+  // 4.2.2
+  NSMutableDictionary *dictionary = [NSMutableDictionary new];
+  while ([self hasRemaining]) {
+    NSString *key = [self _parseAKeyWithError:error];
+    if (!key) return nil;
+
+    NSArray *member;
+    if ([self compareNextChar:'=']) {
+      [self advance];
+      member = [self _parseAnItemOrInnerListWithError:error];
+      if (!member) return nil;
+    } else {
+      NSArray *parameters = [self _parseParametersWithError:error];
+      if (!parameters) return nil;
+      member = @[@(YES), parameters];
+    }
+
+    dictionary[key] = member;
+    [self removeLeadingOWS];
+    if (![self hasRemaining]) {
+      return [dictionary copy];
+    }
+
+    if ([self consume] != ',') {
+      if (error) *error = [self errorWithMessage:@"Failed to parse dictionary; invalid character after member"];
+      return nil;
+    }
+
+    [self removeLeadingOWS];
+    if (![self hasRemaining]) {
+      if (error) *error = [self errorWithMessage:@"Dictionary cannot have a trailing comma"];
+      return nil;
+    }
+  }
+
+  return [dictionary copy];
 }
 
 - (nullable NSArray *)_parseAnItemWithError:(NSError ** _Nullable)error
@@ -339,6 +478,13 @@ typedef NS_ENUM(NSInteger, EXUpdatesStructuredHeadersNumberType) {
 - (void)removeLeadingSP
 {
   while ([self compareNextChar:' ']) {
+    [self advance];
+  }
+}
+
+- (void)removeLeadingOWS
+{
+  while ([self compareNextChar:' '] || [self compareNextChar:'\t']) {
     [self advance];
   }
 }
