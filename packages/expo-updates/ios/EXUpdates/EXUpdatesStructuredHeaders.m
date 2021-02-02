@@ -27,14 +27,34 @@ typedef NS_ENUM(NSInteger, EXUpdatesStructuredHeadersNumberType) {
   return self;
 }
 
-- (nullable NSData *)parseItemForTest
+- (nullable id)parseItemForTest
 {
-  NSData *parsed = [self _parseABooleanWithError:nil];
+  NSData *parsed = [self _parseAnItemWithError:nil];
   [self removeLeadingSP];
   return ![self hasRemaining] ? parsed : nil;
 }
 
-- (nullable id)_parseABareItem:(NSError ** _Nullable)error
+- (nullable NSArray *)_parseAnItemWithError:(NSError ** _Nullable)error
+{
+  // 4.2.3
+  id bareItem = [self _parseABareItemWithError:error];
+  if (!bareItem) return nil;
+  NSDictionary *parameters = [self _parseParametersWithError:error];
+  if (!parameters) return nil;
+  return @[bareItem, parameters];
+}
+
+- (nullable id)_parseAnItemIgnoringParametersWithError:(NSError ** _Nullable)error
+{
+  // 4.2.3-modified
+  id bareItem = [self _parseABareItemWithError:error];
+  if (!bareItem) return nil;
+  NSDictionary *parameters = [self _parseParametersWithError:error];
+  if (!parameters) return nil;
+  return bareItem;
+}
+
+- (nullable id)_parseABareItemWithError:(NSError ** _Nullable)error
 {
   // 4.2.3.1
   unichar firstChar = [self peek];
@@ -54,7 +74,30 @@ typedef NS_ENUM(NSInteger, EXUpdatesStructuredHeadersNumberType) {
   }
 }
 
-- (nullable NSString *)_parseAKey:(NSError ** _Nullable)error
+- (nullable NSDictionary *)_parseParametersWithError:(NSError ** _Nullable)error
+{
+  // 4.2.3.2
+  NSMutableDictionary *parameters = [NSMutableDictionary new];
+  while ([self hasRemaining]) {
+    if (![self compareNextChar:';']) {
+      break;
+    }
+    [self advance];
+    [self removeLeadingSP];
+    NSString *key = [self _parseAKeyWithError:error];
+    if (!key) return nil;
+    id value = @(YES);
+    if ([self compareNextChar:'=']) {
+      [self advance];
+      value = [self _parseABareItemWithError:error];
+      if (!value) return nil;
+    }
+    parameters[key] = value;
+  }
+  return [parameters copy];
+}
+
+- (nullable NSString *)_parseAKeyWithError:(NSError ** _Nullable)error
 {
   // 4.2.3.3
   unichar firstChar = [self peek];

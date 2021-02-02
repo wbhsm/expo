@@ -7,7 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithRawInput:(NSString *)raw;
 
 
-- (nullable NSData *)parseItemForTest;
+- (nullable id)parseItemForTest;
 
 @end
 
