@@ -4,8 +4,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-static NSString * const DIGITS = @"0123456789";
-
 typedef NS_ENUM(NSInteger, EXUpdatesStructuredHeadersNumberType) {
   EXUpdatesStructuredHeadersNumberTypeInteger = 0,
   EXUpdatesStructuredHeadersNumberTypeDecimal = 1
@@ -36,6 +34,49 @@ typedef NS_ENUM(NSInteger, EXUpdatesStructuredHeadersNumberType) {
   return ![self hasRemaining] ? parsed : nil;
 }
 
+- (nullable id)_parseABareItem:(NSError ** _Nullable)error
+{
+  // 4.2.3.1
+  unichar firstChar = [self peek];
+  if ([self isDigit:firstChar] || firstChar == '-') {
+    return [self _parseAnIntegerOrDecimalWithError:error];
+  } else if (firstChar == '"') {
+    return [self _parseAStringWithError:error];
+  } else if ([self isAlpha:firstChar] || firstChar == '*') {
+    return [self _parseATokenWithError:error];
+  } else if (firstChar == ':') {
+    return [self _parseAByteSequenceWithError:error];
+  } else if (firstChar == '?') {
+    return [self _parseABooleanWithError:error];
+  } else {
+    if (error) *error = [self errorWithMessage:@"Unrecognized item type"];
+    return nil;
+  }
+}
+
+- (nullable NSString *)_parseAKey:(NSError ** _Nullable)error
+{
+  // 4.2.3.3
+  unichar firstChar = [self peek];
+  if (![self isLowercaseAlpha:firstChar] && firstChar != '*') {
+    if (error) *error = [self errorWithMessage:@"Key must begin with a lowercase letter or '*'"];
+    return nil;
+  }
+
+  NSMutableString *outputString = [NSMutableString stringWithCapacity:[self remainingLength]];
+  while ([self hasRemaining]) {
+    unichar nextChar = [self peek];
+    if (![self isLowercaseAlpha:nextChar] && ![self isDigit:nextChar] && ![self compareChar:nextChar withSet:@"_-.*"]) {
+      return [outputString copy];
+    } else {
+      [outputString appendFormat:@"%c", nextChar];
+      [self advance];
+    }
+  }
+
+  return [outputString copy];
+}
+
 - (nullable NSNumber *)_parseAnIntegerOrDecimalWithError:(NSError ** _Nullable)error
 {
   // 4.2.4
@@ -53,14 +94,14 @@ typedef NS_ENUM(NSInteger, EXUpdatesStructuredHeadersNumberType) {
     return nil;
   }
 
-  if (![self compareNextCharWithSet:DIGITS]) {
+  if (![self isDigit:[self peek]]) {
     if (error) *error = [self errorWithMessage:@"Integer or decimal must begin with a digit"];
     return nil;
   }
 
   while ([self hasRemaining]) {
     unichar nextChar = [self consume];
-    if ([self compareChar:nextChar withSet:DIGITS]) {
+    if ([self isDigit:nextChar]) {
       [inputNumber appendFormat:@"%c", nextChar];
     } else if (type == EXUpdatesStructuredHeadersNumberTypeInteger && nextChar == '.') {
       if (inputNumber.length > 12) {
@@ -262,6 +303,16 @@ typedef NS_ENUM(NSInteger, EXUpdatesStructuredHeadersNumberType) {
 - (BOOL)compareChar:(unichar)ch withSet:(NSString *)charset
 {
   return [charset containsString:[NSString stringWithFormat:@"%c", ch]];
+}
+
+- (BOOL)isDigit:(unichar)ch
+{
+  return ch >= '0' && ch <= '9';
+}
+
+- (BOOL)isLowercaseAlpha:(unichar)ch
+{
+  return ch >= 'a' && ch <= 'z';
 }
 
 - (BOOL)isAlpha:(unichar)ch
