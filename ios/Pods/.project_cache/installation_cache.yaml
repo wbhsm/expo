@@ -9194,7 +9194,7 @@ CACHE_KEYS:
       EXStructuredHeaders/Tests:
         :debug: d3cd663369760d9be9f18d3bb55a6e2d
         :release: d3cd663369760d9be9f18d3bb55a6e2d
-    CHECKSUM: fc7d8ba5ae3a03b750811fed476e78d1be04831d
+    CHECKSUM: 9fd496b45d9f3f1261cd20c739054861e6f49f58
     FILES:
       - "../../packages/expo-structured-headers/ios/EXStructuredHeaders/EXStructuredHeadersParser.h"
       - "../../packages/expo-structured-headers/ios/EXStructuredHeaders/EXStructuredHeadersParser.m"
@@ -9268,8 +9268,6 @@ CACHE_KEYS:
       - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesModule.m"
       - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesService.h"
       - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesService.m"
-      - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesStructuredHeaders.h"
-      - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesStructuredHeaders.m"
       - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesUtils.h"
       - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesUtils.m"
       - "../../packages/expo-updates/ios/EXUpdates/Update/EXUpdatesBareUpdate.h"
@@ -9284,7 +9282,6 @@ CACHE_KEYS:
       - "../../packages/expo-updates/ios/Tests/EXUpdatesLegacyUpdateTests.m"
       - "../../packages/expo-updates/ios/Tests/EXUpdatesNewUpdateTests.m"
       - "../../packages/expo-updates/ios/Tests/EXUpdatesSelectionPolicyNewestTests.m"
-      - "../../packages/expo-updates/ios/Tests/EXUpdatesStructuredHeadersTests.m"
       - "../../packages/expo-updates/ios/Tests/EXUpdatesUpdateTests.m"
       - "../../packages/expo-updates/ios/Tests/Tests.m"
     PROJECT_NAME: EXUpdates
