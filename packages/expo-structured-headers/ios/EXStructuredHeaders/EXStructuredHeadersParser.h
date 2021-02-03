@@ -10,7 +10,13 @@ typedef NS_ENUM(NSInteger, EXStructuredHeadersParserFieldType) {
 
 @interface EXStructuredHeadersParser : NSObject
 
-- (instancetype)initWithRawInput:(NSString *)raw fieldType:(EXStructuredHeadersParserFieldType)fieldType;
+- (instancetype)initWithRawInput:(NSString *)raw
+                       fieldType:(EXStructuredHeadersParserFieldType)fieldType;
+
+- (instancetype)initWithRawInput:(NSString *)raw
+                       fieldType:(EXStructuredHeadersParserFieldType)fieldType
+              ignoringParameters:(BOOL)shouldIgnoreParameters;
+
 - (nullable id)parseStructuredFieldsWithError:(NSError ** _Nullable)error;
 
 @end

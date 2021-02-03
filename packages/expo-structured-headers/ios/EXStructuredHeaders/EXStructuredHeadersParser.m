@@ -11,9 +11,11 @@ typedef NS_ENUM(NSInteger, EXStructuredHeadersParserNumberType) {
 
 @interface EXStructuredHeadersParser ()
 
-@property (nonatomic, assign) EXStructuredHeadersParserFieldType fieldType;
 @property (nonatomic, strong) NSString *raw;
 @property (nonatomic, assign) NSUInteger position;
+
+@property (nonatomic, assign) EXStructuredHeadersParserFieldType fieldType;
+@property (nonatomic, assign) BOOL shouldIgnoreParameters;
 
 @end
 
@@ -21,10 +23,16 @@ typedef NS_ENUM(NSInteger, EXStructuredHeadersParserNumberType) {
 
 - (instancetype)initWithRawInput:(NSString *)raw fieldType:(EXStructuredHeadersParserFieldType)fieldType
 {
+  return [self initWithRawInput:raw fieldType:fieldType ignoringParameters:NO];
+}
+
+- (instancetype)initWithRawInput:(NSString *)raw fieldType:(EXStructuredHeadersParserFieldType)fieldType ignoringParameters:(BOOL)shouldIgnoreParameters
+{
   if (self = [super init]) {
-    _fieldType = fieldType;
     _raw = raw;
     _position = 0;
+    _fieldType = fieldType;
+    _shouldIgnoreParameters = shouldIgnoreParameters;
   }
   return self;
 }
@@ -66,7 +74,7 @@ typedef NS_ENUM(NSInteger, EXStructuredHeadersParserNumberType) {
   // 4.2.1
   NSMutableArray *members = [NSMutableArray new];
   while ([self hasRemaining]) {
-    NSArray *itemOrInnerList = [self _parseAnItemOrInnerListWithError:error];
+    id itemOrInnerList = [self _parseAnItemOrInnerListWithError:error];
     if (!itemOrInnerList) return nil;
     [members addObject:itemOrInnerList];
 
@@ -90,7 +98,7 @@ typedef NS_ENUM(NSInteger, EXStructuredHeadersParserNumberType) {
   return [members copy];
 }
 
-- (nullable NSArray *)_parseAnItemOrInnerListWithError:(NSError ** _Nullable)error
+- (nullable id)_parseAnItemOrInnerListWithError:(NSError ** _Nullable)error
 {
   // 4.2.1.1
   if ([self compareNextChar:'(']) {
@@ -116,7 +124,7 @@ typedef NS_ENUM(NSInteger, EXStructuredHeadersParserNumberType) {
       [self advance];
       NSDictionary *parameters = [self _parseParametersWithError:error];
       if (!parameters) return nil;
-      return @[[innerList copy], parameters];
+      return [self _memberEntryWithValue:innerList.copy parameters:parameters];
     }
 
     id item = [self _parseAnItemWithError:error];
@@ -141,7 +149,7 @@ typedef NS_ENUM(NSInteger, EXStructuredHeadersParserNumberType) {
     NSString *key = [self _parseAKeyWithError:error];
     if (!key) return nil;
 
-    NSArray *member;
+    id member;
     if ([self compareNextChar:'=']) {
       [self advance];
       member = [self _parseAnItemOrInnerListWithError:error];
@@ -149,7 +157,7 @@ typedef NS_ENUM(NSInteger, EXStructuredHeadersParserNumberType) {
     } else {
       NSArray *parameters = [self _parseParametersWithError:error];
       if (!parameters) return nil;
-      member = @[@(YES), parameters];
+      member = [self _memberEntryWithValue:@(YES) parameters:parameters];
     }
 
     dictionary[key] = member;
@@ -173,24 +181,14 @@ typedef NS_ENUM(NSInteger, EXStructuredHeadersParserNumberType) {
   return [dictionary copy];
 }
 
-- (nullable NSArray *)_parseAnItemWithError:(NSError ** _Nullable)error
+- (nullable id)_parseAnItemWithError:(NSError ** _Nullable)error
 {
   // 4.2.3
   id bareItem = [self _parseABareItemWithError:error];
   if (!bareItem) return nil;
   NSDictionary *parameters = [self _parseParametersWithError:error];
   if (!parameters) return nil;
-  return @[bareItem, parameters];
-}
-
-- (nullable id)_parseAnItemIgnoringParametersWithError:(NSError ** _Nullable)error
-{
-  // 4.2.3-modified
-  id bareItem = [self _parseABareItemWithError:error];
-  if (!bareItem) return nil;
-  NSDictionary *parameters = [self _parseParametersWithError:error];
-  if (!parameters) return nil;
-  return bareItem;
+  return [self _memberEntryWithValue:bareItem parameters:parameters];
 }
 
 - (nullable id)_parseABareItemWithError:(NSError ** _Nullable)error
@@ -428,6 +426,17 @@ typedef NS_ENUM(NSInteger, EXStructuredHeadersParserNumberType) {
   } else {
     if (error) *error = [self errorWithMessage:@"Invalid value for boolean"];
     return nil;
+  }
+}
+
+# pragma mark - ignoring parameters
+
+- (nullable id)_memberEntryWithValue:(id)value parameters:(NSDictionary *)parameters
+{
+  if (_shouldIgnoreParameters) {
+    return value;
+  } else {
+    return @[value, parameters];
   }
 }
 
