@@ -19,68 +19,52 @@
   // the idiomatic format of the `expected` field in the test JSON objects.
   // This prevents us from having to iterate through every possible item and
   // pre-process the expected objects.
-  // https://nshipster.com/method-swizzling/
+  // Same for NSArray
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    Class class = [NSDictionary class];
-
-    SEL originalSelector = @selector(isEqual:);
-    SEL swizzledSelector = @selector(isEqualTestResult:);
-
-    Method originalMethod = class_getInstanceMethod(class, originalSelector);
-    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-
-    BOOL didAddMethod =
-    class_addMethod(class,
-                    originalSelector,
-                    method_getImplementation(swizzledMethod),
-                    method_getTypeEncoding(swizzledMethod));
-
-    if (didAddMethod) {
-      class_replaceMethod(class,
-                          swizzledSelector,
-                          method_getImplementation(originalMethod),
-                          method_getTypeEncoding(originalMethod));
-    } else {
-      method_exchangeImplementations(originalMethod, swizzledMethod);
-    }
+    [self swizzleMethodForClass:[NSDictionary class]
+                       original:@selector(isEqual:)
+                    replacement:@selector(isEqualToTestResult:)];
+    [self swizzleMethodForClass:[NSArray class]
+                       original:@selector(isEqual:)
+                    replacement:@selector(isEqualToTestResult:)];
   });
 }
 
 - (void)tearDown
 {
-  // Put teardown code here. This method is called after the invocation of each test method in the class.
+  static dispatch_once_t undoToken;
+  dispatch_once(&undoToken, ^{
+    [self swizzleMethodForClass:[NSDictionary class]
+                       original:@selector(isEqualToTestResult:)
+                    replacement:@selector(isEqual:)];
+    [self swizzleMethodForClass:[NSArray class]
+                       original:@selector(isEqualToTestResult:)
+                    replacement:@selector(isEqual:)];
+  });
   [super tearDown];
 }
 
-- (void)testBinaries
+// https://nshipster.com/method-swizzling/
+- (void)swizzleMethodForClass:(Class)class original:(SEL)originalSelector replacement:(SEL)swizzledSelector
 {
-  NSString *binaryTestsJson = @"[{\"name\": \"basic binary\",\"raw\": [\":aGVsbG8=:\"],\"header_type\": \"item\",\"expected\": [{\"__type\": \"binary\", \"value\": \"NBSWY3DP\"},{}]},{\"name\": \"empty binary\",\"raw\": [\"::\"],\"header_type\": \"item\",\"expected\": [{\"__type\": \"binary\", \"value\": \"\"},{}]},{\"name\": \"bad paddding\",\"raw\": [\":aGVsbG8:\"],\"header_type\": \"item\",\"expected\": [{\"__type\": \"binary\", \"value\": \"NBSWY3DP\"},{}],\"can_fail\": true,\"canonical\": [\":aGVsbG8=:\"]},{\"name\": \"bad end delimiter\",\"raw\": [\":aGVsbG8=\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"extra whitespace\",\"raw\": [\":aGVsb G8=:\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"extra chars\",\"raw\": [\":aGVsbG!8=:\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"suffix chars\",\"raw\": [\":aGVsbG8=!:\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"non-zero pad bits\",\"raw\": [\":iZ==:\"],\"header_type\": \"item\",\"expected\": [{\"__type\": \"binary\", \"value\": \"RE======\"},{}],\"can_fail\": true,\"canonical\": [\":iQ==:\"]},{\"name\": \"non-ASCII binary\",\"raw\": [\":/+Ah:\"],\"header_type\": \"item\",\"expected\": [{\"__type\": \"binary\", \"value\": \"77QCC===\"},{}]},{\"name\": \"base64url binary\",\"raw\": [\":_-Ah:\"],\"header_type\": \"item\",\"must_fail\": true}]";
-  [self runTestArray:binaryTestsJson];
-}
-
-- (void)testBooleans
-{
-  NSString *booleanTestsJson = @"[{\"name\": \"basic true boolean\",\"raw\": [\"?1\"],\"header_type\": \"item\",\"expected\": [true, {}]},{\"name\": \"basic false boolean\",\"raw\": [\"?0\"],\"header_type\": \"item\",\"expected\": [false, {}]},{\"name\": \"unknown boolean\",\"raw\": [\"?Q\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"whitespace boolean\",\"raw\": [\"? 1\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"negative zero boolean\",\"raw\": [\"?-0\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"T boolean\",\"raw\": [\"?T\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"F boolean\",\"raw\": [\"?F\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"t boolean\",\"raw\": [\"?t\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"f boolean\",\"raw\": [\"?f\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"spelled-out True boolean\",\"raw\": [\"?True\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"spelled-out False boolean\",\"raw\": [\"?False\"],\"header_type\": \"item\",\"must_fail\": true}]";
-  [self runTestArray:booleanTestsJson];
-}
-
-- (void)testDictionaries
-{
-  NSString *dictionaryTestsJson = @"[{\"name\": \"basic dictionary\",\"raw\": [\"en=\\\"Applepie\\\", da=:w4ZibGV0w6ZydGUK:\"],\"header_type\": \"dictionary\",\"expected\": {\"en\": [\"Applepie\", {}], \"da\": [{\"__type\": \"binary\", \"value\": \"YODGE3DFOTB2M4TUMUFA====\"},{}]}},{\"name\": \"empty dictionary\",\"raw\": [\"\"],\"header_type\": \"dictionary\",\"expected\": {},\"canonical\": []},{\"name\": \"single item dictionary\",\"raw\": [\"a=1\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}]}},{\"name\": \"list item dictionary\",\"raw\": [\"a=(1 2)\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [[[1, {}], [2, {}]], {}]}},{\"name\": \"single list item dictionary\",\"raw\": [\"a=(1)\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [[[1, {}]], {}]}},{\"name\": \"empty list item dictionary\",\"raw\": [\"a=()\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [[], {}]}},{\"name\": \"no whitespace dictionary\",\"raw\": [\"a=1,b=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}], \"b\": [2, {}]},\"canonical\": [\"a=1, b=2\"]},{\"name\": \"extra whitespace dictionary\",\"raw\": [\"a=1 ,b=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}], \"b\": [2, {}]},\"canonical\": [\"a=1, b=2\"]},{\"name\": \"tab separated dictionary\",\"raw\": [\"a=1\\t,\\tb=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}], \"b\": [2, {}]},\"canonical\": [\"a=1, b=2\"]},{\"name\": \"leading whitespace dictionary\",\"raw\": [\" a=1 ,b=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}], \"b\": [2, {}]},\"canonical\": [\"a=1, b=2\"]},{\"name\": \"whitespace before = dictionary\",\"raw\": [\"a =1, b=2\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"whitespace after = dictionary\",\"raw\": [\"a=1, b= 2\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"two lines dictionary\",\"raw\": [\"a=1\", \"b=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1, {}], \"b\": [2, {}]},\"canonical\": [\"a=1, b=2\"]},{\"name\": \"missing value dictionary\",\"raw\": [\"a=1, b, c=3\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1,{}], \"b\": [true, {}], \"c\": [3, {}]}},{\"name\": \"all missing value dictionary\",\"raw\": [\"a, b, c\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [true,{}], \"b\": [true, {}], \"c\": [true, {}]}},{\"name\": \"start missing value dictionary\",\"raw\": [\"a, b=2\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [true,{}], \"b\": [2, {}]}},{\"name\": \"end missing value dictionary\",\"raw\": [\"a=1, b\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1,{}], \"b\": [true, {}]}},{\"name\": \"missing value with params dictionary\",\"raw\": [\"a=1, b;foo=9, c=3\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1,{}], \"b\": [true, {\"foo\": 9}], \"c\": [3, {}]}},{\"name\": \"explicit true value with params dictionary\",\"raw\": [\"a=1, b=?1;foo=9, c=3\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [1,{}], \"b\": [true, {\"foo\": 9}], \"c\": [3, {}]},\"canonical\": [\"a=1, b;foo=9, c=3\"]},{\"name\": \"trailing comma dictionary\",\"raw\": [\"a=1, b=2,\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"empty item dictionary\",\"raw\": [\"a=1,,b=2,\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"duplicate key dictionary\",\"raw\": [\"a=1,b=2,a=3\"],\"header_type\": \"dictionary\",\"expected\": {\"a\": [3, {}], \"b\": [2, {}]},\"canonical\": [\"a=3, b=2\"]},{\"name\": \"numeric key dictionary\",\"raw\": [\"a=1,1b=2,a=1\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"uppercase key dictionary\",\"raw\": [\"a=1,B=2,a=1\"],\"header_type\": \"dictionary\",\"must_fail\": true},{\"name\": \"bad key dictionary\",\"raw\": [\"a=1,b!=2,a=1\"],\"header_type\": \"dictionary\",\"must_fail\": true}]";
-  [self runTestArray:dictionaryTestsJson];
-}
-
-- (void)testNumbers
-{
-  NSString *numberTestsJson = @"[{\"name\": \"basic integer\",\"raw\": [\"42\"],\"header_type\": \"item\",\"expected\": [42, {}]},{\"name\": \"zero integer\",\"raw\": [\"0\"],\"header_type\": \"item\",\"expected\": [0, {}]},{\"name\": \"leading 0 zero\",\"raw\": [\"00\"],\"header_type\": \"item\",\"expected\": [0, {}],\"canonical\": [\"0\"]},{\"name\": \"negative zero\",\"raw\": [\"-0\"],\"header_type\": \"item\",\"expected\": [0, {}],\"canonical\": [\"0\"]},{\"name\": \"double negative zero\",\"raw\": [\"--0\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"negative integer\",\"raw\": [\"-42\"],\"header_type\": \"item\",\"expected\": [-42, {}]},{\"name\": \"leading 0 integer\",\"raw\": [\"042\"],\"header_type\": \"item\",\"expected\": [42, {}],\"canonical\": [\"42\"]},{\"name\": \"leading 0 negative integer\",\"raw\": [\"-042\"],\"header_type\": \"item\",\"expected\": [-42, {}],\"canonical\": [\"-42\"]},{\"name\": \"leading 0 zero\",\"raw\": [\"00\"],\"header_type\": \"item\",\"expected\": [0, {}],\"canonical\": [\"0\"]},{\"name\": \"comma\",\"raw\": [\"2,3\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"negative non-DIGIT first character\",\"raw\": [\"-a23\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"sign out of place\",\"raw\": [\"4-2\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"whitespace after sign\",\"raw\": [\"- 42\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"long integer\",\"raw\": [\"123456789012345\"],\"header_type\": \"item\",\"expected\": [123456789012345, {}]},{\"name\": \"long negative integer\",\"raw\": [\"-123456789012345\"],\"header_type\": \"item\",\"expected\": [-123456789012345, {}]},{\"name\": \"too long integer\",\"raw\": [\"1234567890123456\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"negative too long integer\",\"raw\": [\"-1234567890123456\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"simple decimal\",\"raw\": [\"1.23\"],\"header_type\": \"item\",\"expected\": [1.23, {}]},{\"name\": \"negative decimal\",\"raw\": [\"-1.23\"],\"header_type\": \"item\",\"expected\": [-1.23, {}]},{\"name\": \"decimal, whitespace after decimal\",\"raw\": [\"1. 23\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"decimal, whitespace before decimal\",\"raw\": [\"1 .23\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"negative decimal, whitespace after sign\",\"raw\": [\"- 1.23\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"tricky precision decimal\",\"raw\": [\"123456789012.1\"],\"header_type\": \"item\",\"expected\": [123456789012.1, {}]},{\"name\": \"double decimal decimal\",\"raw\": [\"1.5.4\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"adjacent double decimal decimal\",\"raw\": [\"1..4\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"decimal with three fractional digits\",\"raw\": [\"1.123\"],\"header_type\": \"item\",\"expected\": [1.123, {}]},{\"name\": \"negative decimal with three fractional digits\",\"raw\": [\"-1.123\"],\"header_type\": \"item\",\"expected\": [-1.123, {}]},{\"name\": \"decimal with four fractional digits\",\"raw\": [\"1.1234\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"negative decimal with four fractional digits\",\"raw\": [\"-1.1234\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"decimal with thirteen integer digits\",\"raw\": [\"1234567890123.0\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"negative decimal with thirteen integer digits\",\"raw\": [\"-1234567890123.0\"],\"header_type\": \"item\",\"must_fail\": true}]";
-  [self runTestArray:numberTestsJson];
-}
-
-- (void)testStrings
-{
-  NSString *stringTestsJson = @"[{\"name\": \"basic string\",\"raw\": [\"\\\"foo bar\\\"\"],\"header_type\": \"item\",\"expected\": [\"foo bar\", {}]},{\"name\": \"empty string\",\"raw\": [\"\\\"\\\"\"],\"header_type\": \"item\",\"expected\": [\"\", {}]},{\"name\": \"long string\",\"raw\": [\"\\\"foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo \\\"\"],\"header_type\": \"item\",\"expected\": [\"foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo \", {}]},{\"name\": \"whitespace string\",\"raw\": [\"\\\" \\\"\"],\"header_type\": \"item\",\"expected\": [\" \", {}]},{\"name\": \"non-ascii string\",\"raw\": [\"\\\"füü\\\"\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"tab in string\",\"raw\": [\"\\\"\\\\t\\\"\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"newline in string\",\"raw\": [\"\\\" \\\\n \\\"\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"single quoted string\",\"raw\": [\"'foo'\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"unbalanced string\",\"raw\": [\"\\\"foo\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"string quoting\",\"raw\": [\"\\\"foo \\\\\\\"bar\\\\\\\" \\\\\\\\ baz\\\"\"],\"header_type\": \"item\",\"expected\": [\"foo \\\"bar\\\" \\\\ baz\", {}]},{\"name\": \"bad string quoting\",\"raw\": [\"\\\"foo \\\\,\\\"\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"ending string quote\",\"raw\": [\"\\\"foo \\\\\\\"\"],\"header_type\": \"item\",\"must_fail\": true},{\"name\": \"abruptly ending string quote\",\"raw\": [\"\\\"foo \\\\\"],\"header_type\": \"item\",\"must_fail\": true}]";
-  [self runTestArray:stringTestsJson];
+  Method originalMethod = class_getInstanceMethod(class, originalSelector);
+  Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+  
+  BOOL didAddMethod =
+  class_addMethod(class,
+                  originalSelector,
+                  method_getImplementation(swizzledMethod),
+                  method_getTypeEncoding(swizzledMethod));
+  
+  if (didAddMethod) {
+    class_replaceMethod(class,
+                        swizzledSelector,
+                        method_getImplementation(originalMethod),
+                        method_getTypeEncoding(originalMethod));
+  } else {
+    method_exchangeImplementations(originalMethod, swizzledMethod);
+  }
 }
 
 - (void)runTestArray:(NSString *)testsJson
@@ -97,18 +81,18 @@
     EXStructuredHeadersParser *parser = [[EXStructuredHeadersParser alloc] initWithRawInput:rawInput fieldType:[self fieldTypeWithString:test[@"header_type"]]];
     if ([(NSNumber *)test[@"must_fail"] boolValue]) {
       NSError *error;
-      XCTAssertNil([parser parseStructuredFieldsWithError:&error]);
-      XCTAssertNotNil(error);
+      XCTAssertNil([parser parseStructuredFieldsWithError:&error], @"Test failed: %@", test[@"name"]);
+      XCTAssertNotNil(error, @"Test failed correctly, but there was no error object: %@", test[@"name"]);
     } else {
       NSError *error;
       id actual = [parser parseStructuredFieldsWithError:&error];
-      XCTAssertNil(error);
+      XCTAssertNil(error, @"Test failed: %@", test[@"name"]);
 
       id expected = test[@"expected"];
       if ([(NSNumber *)test[@"can_fail"] boolValue]) {
-        XCTAssert(!actual || [expected isEqual:actual]);
+        XCTAssert(!actual || [expected isEqual:actual], @"Test failed: %@", test[@"name"]);
       } else {
-        XCTAssertEqualObjects(expected, actual);
+        XCTAssertEqualObjects(expected, actual, @"Test failed: %@", test[@"name"]);
       }
     }
   }
@@ -129,15 +113,46 @@
 
 @end
 
+@interface NSArray (EXStructuredHeadersParserTests)
+
+- (BOOL)isEqualToTestResult:(id)object;
+
+@end
+
+@implementation NSArray (EXStructuredHeadersParserTests)
+
+- (BOOL)isEqualToTestResult:(id)object
+{
+  // dictionaries in the expected results are represented as arrays of tuplets [key, value]
+  if ([object isKindOfClass:[NSDictionary class]]) {
+    NSMutableArray *arrayToCompare = [NSMutableArray arrayWithCapacity:((NSDictionary *)object).count];
+    [(NSDictionary *)object enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+      [arrayToCompare addObject:@[key, obj]];
+    }];
+    return [self isEqualToArray:arrayToCompare.copy];
+  }
+
+  // plain isEqual implementation
+  if (self == object) {
+    return YES;
+  }
+  if (![object isKindOfClass:[NSArray class]]) {
+    return NO;
+  }
+  return [self isEqualToArray:object];
+}
+
+@end
+
 @interface NSDictionary (EXStructuredHeadersParserTests)
 
-- (BOOL)isEqualTestResult:(id)object;
+- (BOOL)isEqualToTestResult:(id)object;
 
 @end
 
 @implementation NSDictionary (EXStructuredHeadersParserTests)
 
-- (BOOL)isEqualTestResult:(id)object
+- (BOOL)isEqualToTestResult:(id)object
 {
   if ([object isKindOfClass:[NSData class]] && [@"binary" isEqualToString:self[@"__type"]]) {
     NSData *dataToCompare = [[self class] dataFromBase32String:self[@"value"]];
@@ -274,4 +289,3 @@
 }
 
 @end
-
