@@ -2,6 +2,7 @@
 
 @import XCTest;
 
+#import <objc/runtime.h>
 #import <EXStructuredHeaders/EXStructuredHeadersParser.h>
 
 @interface EXStructuredHeadersParserTests : XCTestCase
@@ -13,7 +14,37 @@
 - (void)setUp
 {
   [super setUp];
-  // Put setup code here. This method is called before the invocation of each test method in the class.
+
+  // Replace NSDictionary's isEqual: method at runtime with one that knows about
+  // the idiomatic format of the `expected` field in the test JSON objects.
+  // This prevents us from having to iterate through every possible item and
+  // pre-process the expected objects.
+  // https://nshipster.com/method-swizzling/
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    Class class = [NSDictionary class];
+
+    SEL originalSelector = @selector(isEqual:);
+    SEL swizzledSelector = @selector(isEqualTestResult:);
+
+    Method originalMethod = class_getInstanceMethod(class, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+
+    BOOL didAddMethod =
+    class_addMethod(class,
+                    originalSelector,
+                    method_getImplementation(swizzledMethod),
+                    method_getTypeEncoding(swizzledMethod));
+
+    if (didAddMethod) {
+      class_replaceMethod(class,
+                          swizzledSelector,
+                          method_getImplementation(originalMethod),
+                          method_getTypeEncoding(originalMethod));
+    } else {
+      method_exchangeImplementations(originalMethod, swizzledMethod);
+    }
+  });
 }
 
 - (void)tearDown
@@ -75,9 +106,9 @@
 
       id expected = test[@"expected"];
       if ([(NSNumber *)test[@"can_fail"] boolValue]) {
-        XCTAssert(!actual || [actual isEqual:expected]);
+        XCTAssert(!actual || [expected isEqual:actual]);
       } else {
-        XCTAssertEqualObjects(actual, expected);
+        XCTAssertEqualObjects(expected, actual);
       }
     }
   }
@@ -98,23 +129,33 @@
 
 @end
 
-@implementation NSData (EXStructuredHeadersParserTests)
+@interface NSDictionary (EXStructuredHeadersParserTests)
 
-- (BOOL)isEqual:(id)object
+- (BOOL)isEqualTestResult:(id)object;
+
+@end
+
+@implementation NSDictionary (EXStructuredHeadersParserTests)
+
+- (BOOL)isEqualTestResult:(id)object
 {
-  if ([object isKindOfClass:[NSDictionary class]] && [@"binary" isEqualToString:object[@"__type"]]) {
-    NSData *dataToCompare = [[self class] dataFromBase32String:object[@"value"]];
-    return [self isEqualToData:dataToCompare];
+  if ([object isKindOfClass:[NSData class]] && [@"binary" isEqualToString:self[@"__type"]]) {
+    NSData *dataToCompare = [[self class] dataFromBase32String:self[@"value"]];
+    return [object isEqualToData:dataToCompare];
+  }
+
+  if ([object isKindOfClass:[NSString class]] && [@"token" isEqualToString:self[@"__type"]]) {
+    return [object isEqualToString:self[@"value"]];
   }
 
   // plain isEqual implementation
   if (self == object) {
     return YES;
   }
-  if (![object isKindOfClass:[NSData class]]) {
+  if (![object isKindOfClass:[NSDictionary class]]) {
     return NO;
   }
-  return [self isEqualToData:object];
+  return [self isEqualToDictionary:object];
 }
 
 // https://github.com/ekscrypto/Base32/blob/77e2871b17d71891a6e56e007221d84d77e566b9/Base32/MF_Base32Additions.m
