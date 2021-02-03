@@ -1835,12 +1835,19 @@ PODS:
     - UMFileSystemInterface
   - EXStoreReview (3.0.0):
     - UMCore
+  - EXStructuredHeaders (1.0.0):
+    - UMCore
+  - EXStructuredHeaders/Tests (1.0.0):
+    - UMCore
   - EXTaskManager (9.0.0):
     - UMAppLoader
     - UMConstantsInterface
     - UMCore
     - UMTaskManagerInterface
   - EXUpdates (0.5.0-rc.1):
+    - React-Core
+    - UMCore
+  - EXUpdates/Tests (0.5.0-rc.1):
     - React-Core
     - UMCore
   - EXVideoThumbnails (5.0.0):
@@ -2653,8 +2660,11 @@ DEPENDENCIES:
   - EXSplashScreen (from `../packages/expo-splash-screen/ios`)
   - EXSQLite (from `../packages/expo-sqlite/ios`)
   - EXStoreReview (from `../packages/expo-store-review/ios`)
+  - EXStructuredHeaders (from `../packages/expo-structured-headers/ios`)
+  - EXStructuredHeaders/Tests (from `../packages/expo-structured-headers/ios`)
   - EXTaskManager (from `../packages/expo-task-manager/ios`)
   - EXUpdates (from `../packages/expo-updates/ios`)
+  - EXUpdates/Tests (from `../packages/expo-updates/ios`)
   - EXVideoThumbnails (from `../packages/expo-video-thumbnails/ios`)
   - EXWebBrowser (from `../packages/expo-web-browser/ios`)
   - FBLazyVector (from `../react-native-lab/react-native/Libraries/FBLazyVector`)
@@ -3458,6 +3468,8 @@ EXTERNAL SOURCES:
     :path: "../packages/expo-sqlite/ios"
   EXStoreReview:
     :path: "../packages/expo-store-review/ios"
+  EXStructuredHeaders:
+    :path: "../packages/expo-structured-headers/ios"
   EXTaskManager:
     :path: "../packages/expo-task-manager/ios"
   EXUpdates:
@@ -3910,6 +3922,7 @@ SPEC CHECKSUMS:
   EXSplashScreen: 29c266c9f15e70805a540894f74bd9fa9cd48358
   EXSQLite: 379304a143cb33855a61ef66844c75af9ef67a58
   EXStoreReview: b552c0d512e1b5c2c7371041a033a2827dc01d46
+  EXStructuredHeaders: fc7d8ba5ae3a03b750811fed476e78d1be04831d
   EXTaskManager: e1956fd45bc301cbe852ebffccb9fd0b4ab78494
   EXUpdates: b6fd75d347a9ca61b198a80a77164e33f71b0ee7
   EXVideoThumbnails: 0be939563a5d46ce0d1fa9baea7d454b99475763
@@ -3984,6 +3997,6 @@ SPEC CHECKSUMS:
   Yoga: 7740b94929bbacbddda59bf115b5317e9a161598
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: c7891da53e29cdba441e5429169cb5f1e167ae7e
+PODFILE CHECKSUM: 566607ee4625e55ae6764a5cbd2ac3b18f12fd3d
 
 COCOAPODS: 1.10.0

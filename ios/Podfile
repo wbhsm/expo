@@ -23,6 +23,8 @@ target 'Exponent' do
       'expo-module-template',
       'expo-in-app-purchases',
       'expo-payments-stripe',
+      'expo-updates',
+      'expo-structured-headers',
     ],
     flags: {
       :inhibit_warnings => false
@@ -31,6 +33,8 @@ target 'Exponent' do
 
   # Expo modules that are not unimodules
   pod 'EXRandom', path: '../packages/expo-random/ios'
+  pod 'EXUpdates', path: '../packages/expo-updates/ios', :testspecs => ['Tests']
+  pod 'EXStructuredHeaders', path: '../packages/expo-structured-headers/ios', :testspecs => ['Tests']
 
   # Install vendored pods.
   use_pods! 'vendored/unversioned/*/*.podspec.json'

@@ -2,13 +2,13 @@
 
 @import XCTest;
 
-#import <EXUpdates/EXUpdatesStructuredHeaders.h>
+#import <EXStructuredHeaders/EXStructuredHeadersParser.h>
 
-@interface EXUpdatesStructuredHeadersTests : XCTestCase
+@interface EXStructuredHeadersParserTests : XCTestCase
 
 @end
 
-@implementation EXUpdatesStructuredHeadersTests
+@implementation EXStructuredHeadersParserTests
 
 - (void)setUp
 {
@@ -63,7 +63,7 @@
     // that case-insensitively match the field name into one comma-separated field-value, as per [RFC7230], Section 3.2.2;
     // this assures that the entire field value is processed correctly.
     NSString *rawInput = [(NSArray *)test[@"raw"] componentsJoinedByString:@","];
-    EXUpdatesStructuredHeaders *parser = [[EXUpdatesStructuredHeaders alloc] initWithRawInput:rawInput fieldType:[self fieldTypeWithString:test[@"header_type"]]];
+    EXStructuredHeadersParser *parser = [[EXStructuredHeadersParser alloc] initWithRawInput:rawInput fieldType:[self fieldTypeWithString:test[@"header_type"]]];
     if ([(NSNumber *)test[@"must_fail"] boolValue]) {
       NSError *error;
       XCTAssertNil([parser parseStructuredFieldsWithError:&error]);
@@ -83,14 +83,14 @@
   }
 }
 
-- (EXUpdatesStructuredHeadersFieldType)fieldTypeWithString:(NSString *)string
+- (EXStructuredHeadersParserFieldType)fieldTypeWithString:(NSString *)string
 {
   if ([@"dictionary" isEqualToString:string]) {
-    return EXUpdatesStructuredHeadersFieldTypeDictionary;
+    return EXStructuredHeadersParserFieldTypeDictionary;
   } else if ([@"list" isEqualToString:string]) {
-    return EXUpdatesStructuredHeadersFieldTypeList;
+    return EXStructuredHeadersParserFieldTypeList;
   } else if ([@"item" isEqualToString:string]) {
-    return EXUpdatesStructuredHeadersFieldTypeItem;
+    return EXStructuredHeadersParserFieldTypeItem;
   } else {
     XCTAssert(NO, @"unexpected header_type");
   }
@@ -98,7 +98,7 @@
 
 @end
 
-@implementation NSData (EXUpdatesStructuredHeadersTests)
+@implementation NSData (EXStructuredHeadersParserTests)
 
 - (BOOL)isEqual:(id)object
 {

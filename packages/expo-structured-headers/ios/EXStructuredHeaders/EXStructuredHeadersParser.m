@@ -1,25 +1,25 @@
 //  Copyright © 2021 650 Industries. All rights reserved.
 
-#import <EXUpdates/EXUpdatesStructuredHeaders.h>
+#import <EXStructuredHeaders/EXStructuredHeadersParser.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSInteger, EXUpdatesStructuredHeadersNumberType) {
-  EXUpdatesStructuredHeadersNumberTypeInteger,
-  EXUpdatesStructuredHeadersNumberTypeDecimal
+typedef NS_ENUM(NSInteger, EXStructuredHeadersParserNumberType) {
+  EXStructuredHeadersParserNumberTypeInteger,
+  EXStructuredHeadersParserNumberTypeDecimal
 };
 
-@interface EXUpdatesStructuredHeaders ()
+@interface EXStructuredHeadersParser ()
 
-@property (nonatomic, assign) EXUpdatesStructuredHeadersFieldType fieldType;
+@property (nonatomic, assign) EXStructuredHeadersParserFieldType fieldType;
 @property (nonatomic, strong) NSString *raw;
 @property (nonatomic, assign) NSUInteger position;
 
 @end
 
-@implementation EXUpdatesStructuredHeaders
+@implementation EXStructuredHeadersParser
 
-- (instancetype)initWithRawInput:(NSString *)raw fieldType:(EXUpdatesStructuredHeadersFieldType)fieldType
+- (instancetype)initWithRawInput:(NSString *)raw fieldType:(EXStructuredHeadersParserFieldType)fieldType
 {
   if (self = [super init]) {
     _fieldType = fieldType;
@@ -37,13 +37,13 @@ typedef NS_ENUM(NSInteger, EXUpdatesStructuredHeadersNumberType) {
 
   id output;
   switch (_fieldType) {
-    case EXUpdatesStructuredHeadersFieldTypeList:
+    case EXStructuredHeadersParserFieldTypeList:
       output = [self _parseAListWithError:error];
       break;
-    case EXUpdatesStructuredHeadersFieldTypeDictionary:
+    case EXStructuredHeadersParserFieldTypeDictionary:
       output = [self _parseADictionaryWithError:error];
       break;
-    case EXUpdatesStructuredHeadersFieldTypeItem:
+    case EXStructuredHeadersParserFieldTypeItem:
       output = [self _parseAnItemWithError:error];
       break;
     default:
@@ -262,7 +262,7 @@ typedef NS_ENUM(NSInteger, EXUpdatesStructuredHeadersNumberType) {
 - (nullable NSNumber *)_parseAnIntegerOrDecimalWithError:(NSError ** _Nullable)error
 {
   // 4.2.4
-  EXUpdatesStructuredHeadersNumberType type = EXUpdatesStructuredHeadersNumberTypeInteger;
+  EXStructuredHeadersParserNumberType type = EXStructuredHeadersParserNumberTypeInteger;
   NSInteger sign = 1;
   NSMutableString *inputNumber = [NSMutableString stringWithCapacity:20];
 
@@ -285,28 +285,28 @@ typedef NS_ENUM(NSInteger, EXUpdatesStructuredHeadersNumberType) {
     unichar nextChar = [self consume];
     if ([self isDigit:nextChar]) {
       [inputNumber appendFormat:@"%c", nextChar];
-    } else if (type == EXUpdatesStructuredHeadersNumberTypeInteger && nextChar == '.') {
+    } else if (type == EXStructuredHeadersParserNumberTypeInteger && nextChar == '.') {
       if (inputNumber.length > 12) {
         if (error) *error = [self errorWithMessage:@"Decimal cannot have more than 12 digits before the decimal point"];
         return nil;
       }
       [inputNumber appendFormat:@"%c", nextChar];
-      type = EXUpdatesStructuredHeadersNumberTypeDecimal;
+      type = EXStructuredHeadersParserNumberTypeDecimal;
     } else {
       [self backout];
       break;
     }
 
-    if (type == EXUpdatesStructuredHeadersNumberTypeInteger && inputNumber.length > 15) {
+    if (type == EXStructuredHeadersParserNumberTypeInteger && inputNumber.length > 15) {
       if (error) *error = [self errorWithMessage:@"Integer cannot have more than 15 digits"];
       return nil;
-    } else if (type == EXUpdatesStructuredHeadersNumberTypeDecimal && inputNumber.length > 16) {
+    } else if (type == EXStructuredHeadersParserNumberTypeDecimal && inputNumber.length > 16) {
       if (error) *error = [self errorWithMessage:@"Decimal cannot have more than 16 characters"];
       return nil;
     }
   }
 
-  if (type == EXUpdatesStructuredHeadersNumberTypeInteger) {
+  if (type == EXStructuredHeadersParserNumberTypeInteger) {
     return @(inputNumber.longLongValue * sign);
   } else {
     if ([inputNumber hasSuffix:@"."]) {

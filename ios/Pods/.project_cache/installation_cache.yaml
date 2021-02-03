@@ -9186,6 +9186,23 @@ CACHE_KEYS:
     PROJECT_NAME: EXStoreReview
     SPECS:
       - EXStoreReview (3.0.0)
+  EXStructuredHeaders:
+    BUILD_SETTINGS_CHECKSUM:
+      EXStructuredHeaders:
+        :debug: 20d7cab564dc28500fcaa7c8ef5906a1
+        :release: 20d7cab564dc28500fcaa7c8ef5906a1
+      EXStructuredHeaders/Tests:
+        :debug: d3cd663369760d9be9f18d3bb55a6e2d
+        :release: d3cd663369760d9be9f18d3bb55a6e2d
+    CHECKSUM: fc7d8ba5ae3a03b750811fed476e78d1be04831d
+    FILES:
+      - "../../packages/expo-structured-headers/ios/EXStructuredHeaders/EXStructuredHeadersParser.h"
+      - "../../packages/expo-structured-headers/ios/EXStructuredHeaders/EXStructuredHeadersParser.m"
+      - "../../packages/expo-structured-headers/ios/Tests/EXStructuredHeadersParserTests.m"
+    PROJECT_NAME: EXStructuredHeaders
+    SPECS:
+      - EXStructuredHeaders (1.0.0)
+      - EXStructuredHeaders/Tests (1.0.0)
   EXTaskManager:
     BUILD_SETTINGS_CHECKSUM:
       EXTaskManager:
@@ -9211,6 +9228,9 @@ CACHE_KEYS:
       EXUpdates:
         :debug: 14a46dece9389c0241fc237561314e4d
         :release: 14a46dece9389c0241fc237561314e4d
+      EXUpdates/Tests:
+        :debug: b7381e3d79a3762f6bfde9f1be314a0f
+        :release: b7381e3d79a3762f6bfde9f1be314a0f
     CHECKSUM: b6fd75d347a9ca61b198a80a77164e33f71b0ee7
     FILES:
       - "../../packages/expo-updates/ios/EXUpdates/AppLauncher/EXUpdatesAppLauncher.h"
@@ -9248,6 +9268,8 @@ CACHE_KEYS:
       - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesModule.m"
       - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesService.h"
       - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesService.m"
+      - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesStructuredHeaders.h"
+      - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesStructuredHeaders.m"
       - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesUtils.h"
       - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesUtils.m"
       - "../../packages/expo-updates/ios/EXUpdates/Update/EXUpdatesBareUpdate.h"
@@ -9259,9 +9281,16 @@ CACHE_KEYS:
       - "../../packages/expo-updates/ios/EXUpdates/Update/EXUpdatesUpdate+Private.h"
       - "../../packages/expo-updates/ios/EXUpdates/Update/EXUpdatesUpdate.h"
       - "../../packages/expo-updates/ios/EXUpdates/Update/EXUpdatesUpdate.m"
+      - "../../packages/expo-updates/ios/Tests/EXUpdatesLegacyUpdateTests.m"
+      - "../../packages/expo-updates/ios/Tests/EXUpdatesNewUpdateTests.m"
+      - "../../packages/expo-updates/ios/Tests/EXUpdatesSelectionPolicyNewestTests.m"
+      - "../../packages/expo-updates/ios/Tests/EXUpdatesStructuredHeadersTests.m"
+      - "../../packages/expo-updates/ios/Tests/EXUpdatesUpdateTests.m"
+      - "../../packages/expo-updates/ios/Tests/Tests.m"
     PROJECT_NAME: EXUpdates
     SPECS:
       - EXUpdates (0.5.0-rc.1)
+      - EXUpdates/Tests (0.5.0-rc.1)
   EXVideoThumbnails:
     BUILD_SETTINGS_CHECKSUM:
       EXVideoThumbnails:
@@ -9617,8 +9646,8 @@ CACHE_KEYS:
       - nanopb/encode (0.3.9011)
   Pods-Exponent:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: dbfcf01f366401ae819b1907d727e513
-      Release: dbfcf01f366401ae819b1907d727e513
+      Debug: 8137e64cbde86eed925dc613b1356bdb
+      Release: 8137e64cbde86eed925dc613b1356bdb
     FILES:
       - "${PODS_CONFIGURATION_BUILD_DIR}/ABI39_0_0React-Core/ABI39_0_0AccessibilityResources.bundle"
       - "${PODS_CONFIGURATION_BUILD_DIR}/ABI40_0_0React-Core/ABI40_0_0AccessibilityResources.bundle"
@@ -9630,12 +9659,12 @@ CACHE_KEYS:
       - "${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle"
   Pods-ExponentIntegrationTests:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 494eda6c6ce29b3f9d73a465ea8fa4fb
-      Release: 494eda6c6ce29b3f9d73a465ea8fa4fb
+      Debug: 64ec437b1f8770c2c833593cc7c10efe
+      Release: 64ec437b1f8770c2c833593cc7c10efe
   Pods-Tests:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 494eda6c6ce29b3f9d73a465ea8fa4fb
-      Release: 494eda6c6ce29b3f9d73a465ea8fa4fb
+      Debug: 64ec437b1f8770c2c833593cc7c10efe
+      Release: 64ec437b1f8770c2c833593cc7c10efe
   PromisesObjC:
     BUILD_SETTINGS_CHECKSUM:
       PromisesObjC:

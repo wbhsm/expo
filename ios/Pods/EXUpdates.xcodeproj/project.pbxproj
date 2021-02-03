@@ -7,64 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0595BADE9C43F4EC02D5028228B271DB /* EXUpdatesConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 418CF3B1A326F1AC1CF266D82879AD65 /* EXUpdatesConfig.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		0E065386C75F7C309B0AC2267A512CF7 /* EXUpdatesEmbeddedAppLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FB3FFF13F7B78A76F22945CA1FF89F /* EXUpdatesEmbeddedAppLoader.m */; };
-		165FF2C425D718DF12768EB9B743F01E /* EXUpdatesUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F98F63991575D365644270AC2A686 /* EXUpdatesUtils.m */; };
-		1B5579CDE6645026236954C445634B72 /* EXUpdatesCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 0720C2629CEA2A241C4F1001C7377DEB /* EXUpdatesCrypto.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1FB3877DCB66A20863E019CE00B0B8D0 /* EXUpdatesDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C29492EE1970EF2FD96BAD81C947756E /* EXUpdatesDatabase.m */; };
-		2102BBD667DBD9565132BB82A0BD91BB /* EXUpdatesAppLauncher.h in Headers */ = {isa = PBXBuildFile; fileRef = 88F1C0AA09029BD3FD58F07FC5055962 /* EXUpdatesAppLauncher.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		24B4C212311603488CD05B28E35D1FEA /* EXUpdatesSelectionPolicyNewest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9863E640D56B031D3108F289ABE3D0 /* EXUpdatesSelectionPolicyNewest.m */; };
-		31D7230FFB1C6E3173CFB32438A2122B /* EXUpdatesCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = A08ABA66C27F7D55CA15B20AC22B6C2F /* EXUpdatesCrypto.m */; };
-		33AE42602C73CD7B6102FE66E348ED3B /* EXUpdatesAppLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4858AA76650231F5432B07900D2C8DD4 /* EXUpdatesAppLoader.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		373E6A513D4FA443C87DC2C2FE3F84C4 /* EXUpdatesAppController.h in Headers */ = {isa = PBXBuildFile; fileRef = A4F63D33C368FD092C9DE792B2413DBE /* EXUpdatesAppController.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3815650C145A23305F73F23BDF40FD7C /* EXUpdatesAppLoaderTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F788E761D59C89AD96B020C5D6D3D7A1 /* EXUpdatesAppLoaderTask.m */; };
-		3E2ED41AC373A252D56DA433637F05EB /* EXUpdatesUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BAEE4C30702EC6C63927E9090A29E639 /* EXUpdatesUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4137D2029EA52E7E57964C3ADB033E3A /* EXUpdatesAppLoaderTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 329C42C457A523B7D2B1DCFF073D8F87 /* EXUpdatesAppLoaderTask.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		43C1B6C8ACE6CE960E5EE9B8451CEC90 /* EXUpdatesAppLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DF161E38B2453FBA11DC56D9376CA36F /* EXUpdatesAppLoader.m */; };
-		49636D27BF8E0B65098CF65B585BF349 /* EXUpdatesFileDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = AC0CB3D3E5F3A828FCF8078A98C5EB70 /* EXUpdatesFileDownloader.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		50F095DBF1AF2802C3C779B2A07CB56A /* EXUpdatesService.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB2BFED427F2A6F344DB1AB8E93F159 /* EXUpdatesService.m */; };
-		597521B69E821A23BDB913A4783CA028 /* EXUpdatesModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 972338D8C2E31E9D1C74F0B29E8189EB /* EXUpdatesModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		605F63B89F88BE5C17629D7E278DD050 /* EXUpdatesLegacyUpdate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F8F240BF34CED7BECDE56ABD7F0DA86 /* EXUpdatesLegacyUpdate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6BD6F0C168C1F46317D598467965719C /* EXUpdatesAppLauncherNoDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7422D5FA3CF288184B0A66815418A92D /* EXUpdatesAppLauncherNoDatabase.m */; };
-		737D0065B2C86604EDFAFF3B671F9464 /* EXUpdatesAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 45086DD2C624D4ECF9B79EE4070D0366 /* EXUpdatesAsset.m */; };
-		74E92D665835AE7AF5C69C5425BB5C8E /* EXUpdatesAsset.h in Headers */ = {isa = PBXBuildFile; fileRef = 682F1F1D23EBF1BF4C9957C6F225E693 /* EXUpdatesAsset.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7811C05A150775741343E5BF9CBF8B57 /* EXUpdatesNewUpdate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CE5EF7051C3C054F297518B23888C58 /* EXUpdatesNewUpdate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7B1BABE97E1AA096E72949EB37DEE4B1 /* EXUpdatesAppLoader+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3E1500618A30F542507FA8425EE3DE /* EXUpdatesAppLoader+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7FA6D8A20F35718B23DBC257B92C017D /* EXUpdatesDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EA76F9C044CFEB3D8039D821FE3FC04 /* EXUpdatesDatabase.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		87C0E919902AA46DE9417B4084C583DB /* EXUpdatesRemoteAppLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = B0CB12182CFF1445CFFC93DF08925ED4 /* EXUpdatesRemoteAppLoader.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		905E6A359CF7F72CE7EC16106A046394 /* EXUpdatesAppLauncherWithDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F08B90616667C85FE541D6093A7D2D0 /* EXUpdatesAppLauncherWithDatabase.m */; };
-		926191F21DC50E0C580AB4ADFB698CA4 /* EXUpdatesBareUpdate.h in Headers */ = {isa = PBXBuildFile; fileRef = 57765538D8700E14D12ED177365C381E /* EXUpdatesBareUpdate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		94ABC0CCB03AD29DA97FFAEBF54765E7 /* EXUpdatesAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B95B7A65603AA4CC0E85316648F30AD /* EXUpdatesAppController.m */; };
-		9957910A98DA17622262C56919937A5B /* EXUpdatesEmbeddedAppLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 311CE29F5A2F2842E96251FF094A0AD3 /* EXUpdatesEmbeddedAppLoader.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A49FC24134526EB6CE3D09B54C520CAA /* EXUpdatesUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 183DBF162612BF8D6ED94B66A089E1C9 /* EXUpdatesUpdate.m */; };
-		AAF7AA2001D6583995653C9AA80AFA50 /* EXUpdatesSelectionPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 84DAF43F7FCCDFA87D9746A779CD3104 /* EXUpdatesSelectionPolicy.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AB388E64EE82494BE4CF43736A1A05A5 /* EXUpdatesRemoteAppLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 718DDD11450B0F0428B77D0D7ADEBC86 /* EXUpdatesRemoteAppLoader.m */; };
-		B58B4E19B9C644B81C4B363579D7611F /* EXUpdatesBareUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F2CCD8D9D211B039AFBDB76D2135DD /* EXUpdatesBareUpdate.m */; };
-		B5AA505F9DD89F85C10112C386A6A1EF /* EXUpdatesAppLauncherWithDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 053DC4C79FB1A6E5CDC686ABAE480874 /* EXUpdatesAppLauncherWithDatabase.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B9DD1D651431A2E7F0B43998308BC716 /* EXUpdatesService.h in Headers */ = {isa = PBXBuildFile; fileRef = EA52B743CF06444855A14BFD572537BC /* EXUpdatesService.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C29D40A551287565AAEBC5338EA3B99B /* EXUpdatesReaper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EE9C823D6EED47DE7FCBA5E34B7E497 /* EXUpdatesReaper.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C544809719DFE05123F827771F870FB6 /* EXUpdates-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B2023E177610D437B5EA05B1F9115B /* EXUpdates-dummy.m */; };
-		C595DD31D0B755AA21CF6E3BB7698780 /* EXUpdatesUpdate.h in Headers */ = {isa = PBXBuildFile; fileRef = 11CF9959DE25ED98F55FCB90F9EC0B13 /* EXUpdatesUpdate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CA89ACD0627630B950739F9482D438FB /* EXUpdatesReaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4374D2C3716A13EF98F681AF94C87 /* EXUpdatesReaper.m */; };
-		CDDDCC080AB901DFF88C1280C46BA2F4 /* EXUpdatesConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 617ADED5E9E268733E0C2771A98C3DFD /* EXUpdatesConfig.m */; };
-		D00C7B9D0F2EF1F40C19E6B45D33AF32 /* EXUpdatesNewUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = B58B98703F97B5E383B29A123793AA20 /* EXUpdatesNewUpdate.m */; };
-		D4C791240F422C86885056A22BE73E34 /* EXUpdatesFileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2A755D5D905DAE8BFD1D472AC8E7D /* EXUpdatesFileDownloader.m */; };
-		D97CF0BD9273D33173B49693A6443911 /* EXUpdatesSelectionPolicyNewest.h in Headers */ = {isa = PBXBuildFile; fileRef = A6E63826BA983550372B90ACC09680DB /* EXUpdatesSelectionPolicyNewest.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E961A96B1DF44642CD7E525A132FF523 /* EXUpdatesModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E66ED73C4264F7DC52B041F6C298EA46 /* EXUpdatesModule.m */; };
-		EBDA3CB13EFE50E09B306E18D198F6E0 /* EXUpdatesAppLauncherNoDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C0EAA88421094C900658BC0BCDC09F /* EXUpdatesAppLauncherNoDatabase.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5BC71353545F24178E92011C6F2E4A3 /* EXUpdatesUpdate+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 94FE651C354BF3F5FB48B99EF1230542 /* EXUpdatesUpdate+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FF34FDB812A14B5E60EF3327CD2C06A9 /* EXUpdatesLegacyUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4384E7652605CD8976AC579379B2BED1 /* EXUpdatesLegacyUpdate.m */; };
+		014DA82EC058AE52E2E9A042D6220E0B /* EXUpdatesCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = D119BD4A4883B19F2D2C610B55D62F12 /* EXUpdatesCrypto.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		01EF629F3FA8E35117A95A050AB484B9 /* EXUpdatesService.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DA5E67EC092DE3C04C95B9181376F7 /* EXUpdatesService.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		03461C212F3809B846869431557F2974 /* EXUpdates-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EFBF641AA4657459A537727336E948 /* EXUpdates-dummy.m */; };
+		07608F92DEE8FC95616B7422612D9214 /* EXUpdatesAppLoaderTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C75ECBCF0B0ED6DA198FE3AC2652413 /* EXUpdatesAppLoaderTask.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0C0A7D9CCE6CCB76B264E2FDD501E1D6 /* EXUpdatesAppLauncherNoDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2927FFAEFCA15A0258F09283AF0376B0 /* EXUpdatesAppLauncherNoDatabase.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0C5EED2B570FDB2F6115D384B7C7088D /* EXUpdatesAppController.h in Headers */ = {isa = PBXBuildFile; fileRef = CBCA3364086FCA4C42C74B0A5683CB1E /* EXUpdatesAppController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0E03ADC097341D8243F8E5A4CC3BFF60 /* EXUpdatesUpdateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF53185A3B337D51930C9D79AB93BA1 /* EXUpdatesUpdateTests.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0FB94568A9F13F3FE29F4161DC06A236 /* EXUpdatesEmbeddedAppLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9009456F530481144CA9694B858BB858 /* EXUpdatesEmbeddedAppLoader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1081FEBAF105FC8D84074EB17605E128 /* EXUpdatesModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BE64345F57529695D93435297E0D5 /* EXUpdatesModule.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1E3851E82B543ECD8FEB891CDD916256 /* EXUpdatesAppLoaderTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F07ADD43C05E5F30E10B25A675D23FD4 /* EXUpdatesAppLoaderTask.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1F7D04FCC6C744061FD06C60532CC898 /* EXUpdatesLegacyUpdate.h in Headers */ = {isa = PBXBuildFile; fileRef = 975DD97F8B92A08886EA3F1338E717F2 /* EXUpdatesLegacyUpdate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		220A3BB67B12F29CD1EC1F9A38AB9E91 /* EXUpdatesStructuredHeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DDE36F859BEFB02DDEFAB564AC9820 /* EXUpdatesStructuredHeaders.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2713F70A6BA9E5FF85F1266E84B37B86 /* EXUpdatesNewUpdate.h in Headers */ = {isa = PBXBuildFile; fileRef = F7189B503C311311F0C7DEAF950B0631 /* EXUpdatesNewUpdate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		30077E58D215442BBD95CC0FE205E311 /* EXUpdatesBareUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 915AB44DEAEA8C321B6FFC39D1515BED /* EXUpdatesBareUpdate.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		3940934029D1973B04DC6BC99F6D6B3D /* EXUpdatesAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 33AC86BC5825A29C4AE47E60A435F4A1 /* EXUpdatesAsset.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		3C49F56F192AC2F015BE6688C523D7F0 /* EXUpdatesSelectionPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9804E0AF1573203F9EC69461528EB5CF /* EXUpdatesSelectionPolicy.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3CC241690C35F98D15701688D5F6009F /* EXUpdatesAppLauncher.h in Headers */ = {isa = PBXBuildFile; fileRef = 970C0C29C4CB014F76BD4DBB8D345A4F /* EXUpdatesAppLauncher.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3E61F5EC3A6442684D058CAE73E16BD1 /* EXUpdatesFileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D815DD76D97C106507387C5E8F25AA /* EXUpdatesFileDownloader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		44AE35BCAF91912F596FA50FDFF6126E /* EXUpdatesReaper.h in Headers */ = {isa = PBXBuildFile; fileRef = EF83CAC104A9DF8E248892386CD0ADFD /* EXUpdatesReaper.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4E7004388603C11C81499FEA1454B9FA /* EXUpdatesStructuredHeadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7D32BAB56C27BDB54B40AD5D29CEEF /* EXUpdatesStructuredHeadersTests.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		57D6949CE56D55CAC3C4A3152EBB485C /* EXUpdatesRemoteAppLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116EBF0AC5338CD00DD4F787560B924 /* EXUpdatesRemoteAppLoader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6FD0BF8D76DCC6EA6F8D964EA0598830 /* EXUpdatesSelectionPolicyNewest.h in Headers */ = {isa = PBXBuildFile; fileRef = C2BA2DA976B12306AEA6D11CC7346E1B /* EXUpdatesSelectionPolicyNewest.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		77BC381DC602F331E8D29EACD3385C3D /* EXUpdatesDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = AD8C1BD9953FBE4EF3A8B15210FDFDAB /* EXUpdatesDatabase.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		790FE28D260EFABB63F4B4F3378FE311 /* EXUpdatesLegacyUpdateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CA7029C54A1550578A144BC55D53BF /* EXUpdatesLegacyUpdateTests.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7962B8216B53DD10C5A6B6E2322184BF /* EXUpdatesNewUpdateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F30FDB42D5A45E68ACFB0626E043995 /* EXUpdatesNewUpdateTests.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8B567B11F6A209A456AEB842646C0A70 /* EXUpdatesModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FC935091642FB7C66F74055FCA048B0 /* EXUpdatesModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8C50269A7C57E7B2EDC3A0D9F3D27B3F /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B44F9FE85CE55E4D9FD95F9C74409676 /* Tests.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		930CD041D1442CC7E25EBCDAD20A4892 /* EXUpdatesUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC77BC2A94BAA1AE6C4A6683CA57424 /* EXUpdatesUpdate.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9CD14879D0BC9C5466C12B2D9EF20D57 /* EXUpdatesSelectionPolicyNewestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3D64CBDD664BA31C4C776CCAADB661 /* EXUpdatesSelectionPolicyNewestTests.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9E03EF8E606340DD1A93C38076FFFC77 /* EXUpdatesLegacyUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5B5F8CD8C2B62B67033D07BC3A80A0 /* EXUpdatesLegacyUpdate.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A05160E205E80A14971FADBF5C73410C /* EXUpdatesAppLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D859535A10E14F7B949C7940B08913 /* EXUpdatesAppLoader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A148507966E2CEBC847A699AAAC0ACC5 /* EXUpdatesCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = A79535BCA4E5B4945669D26CC7D743A5 /* EXUpdatesCrypto.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A157C716D70784414E18B64E8F39705C /* EXUpdatesDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC79FD9BFA640B15E91152F0E9001CA /* EXUpdatesDatabase.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A569556265CB3D01F6BFDFE9BED8CE03 /* EXUpdatesUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E5753322C6704EFFA6DDF13261F38C7D /* EXUpdatesUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A71430DB1D1FF74222D8EA0489B80695 /* EXUpdatesAppLauncherWithDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 409D3188BBC069091E15CE09D4DD9896 /* EXUpdatesAppLauncherWithDatabase.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A7B0AE35C38727F3F1C8EF2B7424136F /* EXUpdatesFileDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 96A425E239924C459DBE407A4295FAC3 /* EXUpdatesFileDownloader.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A8550EEDF4E337FE15D54F6EFA25144C /* EXUpdatesConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AC470EAAFF474A911DA8389047C3EC /* EXUpdatesConfig.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B1A3B2EA3767FFE8397486887011BF7A /* EXUpdatesAppLauncherWithDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 192F1498F3456E9050D4EC5DC68C5C28 /* EXUpdatesAppLauncherWithDatabase.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B3AD398CA59E4B0814AB53659AC221B7 /* EXUpdatesAppLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FAD944B46592AA26F2839FCA2FD5841 /* EXUpdatesAppLoader.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BA6B0CF36F0677CAC7C7DD36B6E302F6 /* EXUpdatesUpdate+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 4399137F4CA79FB0B5C4483D0A7AA745 /* EXUpdatesUpdate+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BF519668DE8EB8E9DCD5A1EBDFA826A0 /* EXUpdatesReaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 639FDF46AFADE90E09F519BAAECC28DE /* EXUpdatesReaper.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C2F1830DBC4B088137A724B548A4B2C8 /* EXUpdatesEmbeddedAppLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = BFDFF60EF6F64E624333186EA14BD985 /* EXUpdatesEmbeddedAppLoader.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C3443FB62FB12C4D51A8CA09EA2CF84A /* EXUpdatesRemoteAppLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = FE6C20C9E43F43BB7CC29C5D37749D4D /* EXUpdatesRemoteAppLoader.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C741730160B2517A8F420019F4D364C3 /* EXUpdatesSelectionPolicyNewest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2383B41C2B46EBD74D02DEF2048CD2E0 /* EXUpdatesSelectionPolicyNewest.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C8801314E976F1BBBDDD8A1005305C6A /* EXUpdatesStructuredHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 65555C8AD67F97680DCD8C3D5F39AC4E /* EXUpdatesStructuredHeaders.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CC9D06316B80FC0A7051DAEEF5968CBA /* EXUpdatesUpdate.h in Headers */ = {isa = PBXBuildFile; fileRef = A9C10D1330F0BE5EA50E55BC97B5848D /* EXUpdatesUpdate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D430904E2EA5F88E6220B6B3F5A85EA0 /* EXUpdatesUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 069D632FB2E1BD78B7C272F063C322E9 /* EXUpdatesUtils.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E453ADF6FE0EABC61A017C225712330E /* EXUpdatesAppLoader+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 75FAD8A69CAA2BD5D16089B3A87A1FCE /* EXUpdatesAppLoader+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EAE753EBC2093A5DF9BC0718CB44725B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DD2F572BF1A778257B09A217AE4377 /* Foundation.framework */; };
+		EBE66F767A491C95EA7C12CE5A69797F /* EXUpdatesService.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D742702BAC123EEEBC25BA04E587B7D /* EXUpdatesService.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EE68C18251165CD92E6946B836CB5B4A /* EXUpdatesAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF7A22875121A405D949FFDFBB9075C /* EXUpdatesAppController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EFC402C7A17C0F8C4E2F2888D589D5F7 /* EXUpdatesAppLauncherNoDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B7DCB094B5C0B725ACE3E6438BF17CE /* EXUpdatesAppLauncherNoDatabase.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F3B9E0916AA4734B07D6B9CE62D38EFD /* EXUpdatesConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 42043E131A65FFBB7E1CFC5CCBB28DCD /* EXUpdatesConfig.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F3F8A40849AA0F915DF1964F20BFFB34 /* EXUpdatesNewUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41884586081ACD94A31579CB670696C7 /* EXUpdatesNewUpdate.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F9E5E6A25048FA83A04137A3AF684EEB /* EXUpdatesAsset.h in Headers */ = {isa = PBXBuildFile; fileRef = 84E66E2AEDA7B5BAB19AD30CCBA7E699 /* EXUpdatesAsset.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FC14C974B473B8727F4071D28957FE50 /* EXUpdatesBareUpdate.h in Headers */ = {isa = PBXBuildFile; fileRef = 821A5D1F397DE6843CEAF0ED2C54069A /* EXUpdatesBareUpdate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		365CBAC19B40416DF9B60F4634FE0804 /* PBXContainerItemProxy */ = {
+		2B6820CC528DDF9E8396CE35AAD02D75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F8DCB5B01C9AB27C3F00E4D2EE9B25D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 076FF2640FFF3466FB36FD12A629113A;
+			remoteInfo = EXUpdates;
+		};
+		6943E055A8932D7FC64FFE579B0690F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0F763A044DF5AFE04810D0675E73927F /* React-Core.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 5DA1A74647F652AE8E4DE074AFC4C6B7;
 			remoteInfo = "React-Core";
 		};
-		B1A30BBCF675D53F8D3451989990A241 /* PBXContainerItemProxy */ = {
+		E3D2BFFB24EFF3A2CDC8AB3D6A043763 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 340A08C1DE68BCFBBB140990F5A5DE2D /* UMCore.xcodeproj */;
 			proxyType = 1;
@@ -74,89 +90,96 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00C0EAA88421094C900658BC0BCDC09F /* EXUpdatesAppLauncherNoDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesAppLauncherNoDatabase.h; sourceTree = "<group>"; };
-		053DC4C79FB1A6E5CDC686ABAE480874 /* EXUpdatesAppLauncherWithDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesAppLauncherWithDatabase.h; sourceTree = "<group>"; };
-		0720C2629CEA2A241C4F1001C7377DEB /* EXUpdatesCrypto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesCrypto.h; sourceTree = "<group>"; };
+		069D632FB2E1BD78B7C272F063C322E9 /* EXUpdatesUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesUtils.m; path = EXUpdates/EXUpdatesUtils.m; sourceTree = "<group>"; };
 		0F763A044DF5AFE04810D0675E73927F /* React-Core */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "React-Core"; path = "React-Core.xcodeproj"; sourceTree = "<group>"; };
-		11CF9959DE25ED98F55FCB90F9EC0B13 /* EXUpdatesUpdate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesUpdate.h; sourceTree = "<group>"; };
-		183DBF162612BF8D6ED94B66A089E1C9 /* EXUpdatesUpdate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesUpdate.m; sourceTree = "<group>"; };
-		1F08B90616667C85FE541D6093A7D2D0 /* EXUpdatesAppLauncherWithDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesAppLauncherWithDatabase.m; sourceTree = "<group>"; };
-		2C3E1500618A30F542507FA8425EE3DE /* EXUpdatesAppLoader+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EXUpdatesAppLoader+Private.h"; sourceTree = "<group>"; };
-		311CE29F5A2F2842E96251FF094A0AD3 /* EXUpdatesEmbeddedAppLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesEmbeddedAppLoader.h; sourceTree = "<group>"; };
-		329C42C457A523B7D2B1DCFF073D8F87 /* EXUpdatesAppLoaderTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesAppLoaderTask.h; sourceTree = "<group>"; };
+		1783B87D9DE5D10C775A89104F52B7E4 /* EXUpdates-Unit-Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "EXUpdates-Unit-Tests-Info.plist"; sourceTree = "<group>"; };
+		192F1498F3456E9050D4EC5DC68C5C28 /* EXUpdatesAppLauncherWithDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesAppLauncherWithDatabase.h; sourceTree = "<group>"; };
+		1D5B5F8CD8C2B62B67033D07BC3A80A0 /* EXUpdatesLegacyUpdate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesLegacyUpdate.m; sourceTree = "<group>"; };
+		2383B41C2B46EBD74D02DEF2048CD2E0 /* EXUpdatesSelectionPolicyNewest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesSelectionPolicyNewest.m; sourceTree = "<group>"; };
+		27AC470EAAFF474A911DA8389047C3EC /* EXUpdatesConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesConfig.m; path = EXUpdates/EXUpdatesConfig.m; sourceTree = "<group>"; };
+		2927FFAEFCA15A0258F09283AF0376B0 /* EXUpdatesAppLauncherNoDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesAppLauncherNoDatabase.m; sourceTree = "<group>"; };
+		2DA9D5AF82D8141AFA492C592A371195 /* EXUpdates-Unit-Tests-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EXUpdates-Unit-Tests-prefix.pch"; sourceTree = "<group>"; };
+		32CA7029C54A1550578A144BC55D53BF /* EXUpdatesLegacyUpdateTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesLegacyUpdateTests.m; path = Tests/EXUpdatesLegacyUpdateTests.m; sourceTree = "<group>"; };
+		33AC86BC5825A29C4AE47E60A435F4A1 /* EXUpdatesAsset.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesAsset.m; sourceTree = "<group>"; };
 		340A08C1DE68BCFBBB140990F5A5DE2D /* UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UMCore; path = UMCore.xcodeproj; sourceTree = "<group>"; };
-		3EE9C823D6EED47DE7FCBA5E34B7E497 /* EXUpdatesReaper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesReaper.h; sourceTree = "<group>"; };
-		3F46C1463DE53FF41C9AA839087E5161 /* EXUpdates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EXUpdates.release.xcconfig; sourceTree = "<group>"; };
-		3FD4374D2C3716A13EF98F681AF94C87 /* EXUpdatesReaper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesReaper.m; sourceTree = "<group>"; };
-		418CF3B1A326F1AC1CF266D82879AD65 /* EXUpdatesConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXUpdatesConfig.h; path = EXUpdates/EXUpdatesConfig.h; sourceTree = "<group>"; };
-		4384E7652605CD8976AC579379B2BED1 /* EXUpdatesLegacyUpdate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesLegacyUpdate.m; sourceTree = "<group>"; };
-		45086DD2C624D4ECF9B79EE4070D0366 /* EXUpdatesAsset.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesAsset.m; sourceTree = "<group>"; };
-		4858AA76650231F5432B07900D2C8DD4 /* EXUpdatesAppLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesAppLoader.h; sourceTree = "<group>"; };
-		57765538D8700E14D12ED177365C381E /* EXUpdatesBareUpdate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesBareUpdate.h; sourceTree = "<group>"; };
-		617ADED5E9E268733E0C2771A98C3DFD /* EXUpdatesConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesConfig.m; path = EXUpdates/EXUpdatesConfig.m; sourceTree = "<group>"; };
-		682F1F1D23EBF1BF4C9957C6F225E693 /* EXUpdatesAsset.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesAsset.h; sourceTree = "<group>"; };
-		6B95B7A65603AA4CC0E85316648F30AD /* EXUpdatesAppController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesAppController.m; path = EXUpdates/EXUpdatesAppController.m; sourceTree = "<group>"; };
-		6EA76F9C044CFEB3D8039D821FE3FC04 /* EXUpdatesDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesDatabase.h; sourceTree = "<group>"; };
-		718DDD11450B0F0428B77D0D7ADEBC86 /* EXUpdatesRemoteAppLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesRemoteAppLoader.m; sourceTree = "<group>"; };
-		7422D5FA3CF288184B0A66815418A92D /* EXUpdatesAppLauncherNoDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesAppLauncherNoDatabase.m; sourceTree = "<group>"; };
-		84DAF43F7FCCDFA87D9746A779CD3104 /* EXUpdatesSelectionPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesSelectionPolicy.h; sourceTree = "<group>"; };
-		88F1C0AA09029BD3FD58F07FC5055962 /* EXUpdatesAppLauncher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesAppLauncher.h; sourceTree = "<group>"; };
-		8CE5EF7051C3C054F297518B23888C58 /* EXUpdatesNewUpdate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesNewUpdate.h; sourceTree = "<group>"; };
-		8F8F240BF34CED7BECDE56ABD7F0DA86 /* EXUpdatesLegacyUpdate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesLegacyUpdate.h; sourceTree = "<group>"; };
-		94FE651C354BF3F5FB48B99EF1230542 /* EXUpdatesUpdate+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EXUpdatesUpdate+Private.h"; sourceTree = "<group>"; };
-		972338D8C2E31E9D1C74F0B29E8189EB /* EXUpdatesModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXUpdatesModule.h; path = EXUpdates/EXUpdatesModule.h; sourceTree = "<group>"; };
-		A08ABA66C27F7D55CA15B20AC22B6C2F /* EXUpdatesCrypto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesCrypto.m; sourceTree = "<group>"; };
-		A3F2CCD8D9D211B039AFBDB76D2135DD /* EXUpdatesBareUpdate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesBareUpdate.m; sourceTree = "<group>"; };
-		A4F63D33C368FD092C9DE792B2413DBE /* EXUpdatesAppController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXUpdatesAppController.h; path = EXUpdates/EXUpdatesAppController.h; sourceTree = "<group>"; };
-		A6E63826BA983550372B90ACC09680DB /* EXUpdatesSelectionPolicyNewest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesSelectionPolicyNewest.h; sourceTree = "<group>"; };
-		ABB2BFED427F2A6F344DB1AB8E93F159 /* EXUpdatesService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesService.m; path = EXUpdates/EXUpdatesService.m; sourceTree = "<group>"; };
-		AC0CB3D3E5F3A828FCF8078A98C5EB70 /* EXUpdatesFileDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesFileDownloader.h; sourceTree = "<group>"; };
-		AE9863E640D56B031D3108F289ABE3D0 /* EXUpdatesSelectionPolicyNewest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesSelectionPolicyNewest.m; sourceTree = "<group>"; };
-		B0CB12182CFF1445CFFC93DF08925ED4 /* EXUpdatesRemoteAppLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesRemoteAppLoader.h; sourceTree = "<group>"; };
-		B58B98703F97B5E383B29A123793AA20 /* EXUpdatesNewUpdate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesNewUpdate.m; sourceTree = "<group>"; };
-		BAEE4C30702EC6C63927E9090A29E639 /* EXUpdatesUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXUpdatesUtils.h; path = EXUpdates/EXUpdatesUtils.h; sourceTree = "<group>"; };
-		C22F98F63991575D365644270AC2A686 /* EXUpdatesUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesUtils.m; path = EXUpdates/EXUpdatesUtils.m; sourceTree = "<group>"; };
-		C29492EE1970EF2FD96BAD81C947756E /* EXUpdatesDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesDatabase.m; sourceTree = "<group>"; };
+		39D815DD76D97C106507387C5E8F25AA /* EXUpdatesFileDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesFileDownloader.m; sourceTree = "<group>"; };
+		39DDE36F859BEFB02DDEFAB564AC9820 /* EXUpdatesStructuredHeaders.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesStructuredHeaders.m; path = EXUpdates/EXUpdatesStructuredHeaders.m; sourceTree = "<group>"; };
+		3FC935091642FB7C66F74055FCA048B0 /* EXUpdatesModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXUpdatesModule.h; path = EXUpdates/EXUpdatesModule.h; sourceTree = "<group>"; };
+		409D3188BBC069091E15CE09D4DD9896 /* EXUpdatesAppLauncherWithDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesAppLauncherWithDatabase.m; sourceTree = "<group>"; };
+		41884586081ACD94A31579CB670696C7 /* EXUpdatesNewUpdate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesNewUpdate.m; sourceTree = "<group>"; };
+		42043E131A65FFBB7E1CFC5CCBB28DCD /* EXUpdatesConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXUpdatesConfig.h; path = EXUpdates/EXUpdatesConfig.h; sourceTree = "<group>"; };
+		4399137F4CA79FB0B5C4483D0A7AA745 /* EXUpdatesUpdate+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EXUpdatesUpdate+Private.h"; sourceTree = "<group>"; };
+		4D742702BAC123EEEBC25BA04E587B7D /* EXUpdatesService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXUpdatesService.h; path = EXUpdates/EXUpdatesService.h; sourceTree = "<group>"; };
+		4FF53185A3B337D51930C9D79AB93BA1 /* EXUpdatesUpdateTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesUpdateTests.m; path = Tests/EXUpdatesUpdateTests.m; sourceTree = "<group>"; };
+		50F42DB63AAEEE15444C258314621FD1 /* EXUpdates-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EXUpdates-prefix.pch"; sourceTree = "<group>"; };
+		58F221F4EC4E2ADA685868B95307A96F /* EXUpdates.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = EXUpdates.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5E6BC2A2DF3BF216ECF2A014ACD52F6D /* EXUpdates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EXUpdates.release.xcconfig; sourceTree = "<group>"; };
+		5F30FDB42D5A45E68ACFB0626E043995 /* EXUpdatesNewUpdateTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesNewUpdateTests.m; path = Tests/EXUpdatesNewUpdateTests.m; sourceTree = "<group>"; };
+		639FDF46AFADE90E09F519BAAECC28DE /* EXUpdatesReaper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesReaper.m; sourceTree = "<group>"; };
+		65555C8AD67F97680DCD8C3D5F39AC4E /* EXUpdatesStructuredHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXUpdatesStructuredHeaders.h; path = EXUpdates/EXUpdatesStructuredHeaders.h; sourceTree = "<group>"; };
+		6E5BE64345F57529695D93435297E0D5 /* EXUpdatesModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesModule.m; path = EXUpdates/EXUpdatesModule.m; sourceTree = "<group>"; };
+		6FAD944B46592AA26F2839FCA2FD5841 /* EXUpdatesAppLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesAppLoader.h; sourceTree = "<group>"; };
+		75FAD8A69CAA2BD5D16089B3A87A1FCE /* EXUpdatesAppLoader+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EXUpdatesAppLoader+Private.h"; sourceTree = "<group>"; };
+		7B7D32BAB56C27BDB54B40AD5D29CEEF /* EXUpdatesStructuredHeadersTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesStructuredHeadersTests.m; path = Tests/EXUpdatesStructuredHeadersTests.m; sourceTree = "<group>"; };
+		7FBB39F43D5C7A9E8D303660A3594DA9 /* EXUpdates-Unit-Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "EXUpdates-Unit-Tests"; path = "EXUpdates-Unit-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		821A5D1F397DE6843CEAF0ED2C54069A /* EXUpdatesBareUpdate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesBareUpdate.h; sourceTree = "<group>"; };
+		84E66E2AEDA7B5BAB19AD30CCBA7E699 /* EXUpdatesAsset.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesAsset.h; sourceTree = "<group>"; };
+		88D859535A10E14F7B949C7940B08913 /* EXUpdatesAppLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesAppLoader.m; sourceTree = "<group>"; };
+		8BC77BC2A94BAA1AE6C4A6683CA57424 /* EXUpdatesUpdate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesUpdate.m; sourceTree = "<group>"; };
+		8C75ECBCF0B0ED6DA198FE3AC2652413 /* EXUpdatesAppLoaderTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesAppLoaderTask.h; sourceTree = "<group>"; };
+		9009456F530481144CA9694B858BB858 /* EXUpdatesEmbeddedAppLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesEmbeddedAppLoader.m; sourceTree = "<group>"; };
+		9116EBF0AC5338CD00DD4F787560B924 /* EXUpdatesRemoteAppLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesRemoteAppLoader.m; sourceTree = "<group>"; };
+		915AB44DEAEA8C321B6FFC39D1515BED /* EXUpdatesBareUpdate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesBareUpdate.m; sourceTree = "<group>"; };
+		96A425E239924C459DBE407A4295FAC3 /* EXUpdatesFileDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesFileDownloader.h; sourceTree = "<group>"; };
+		970C0C29C4CB014F76BD4DBB8D345A4F /* EXUpdatesAppLauncher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesAppLauncher.h; sourceTree = "<group>"; };
+		975DD97F8B92A08886EA3F1338E717F2 /* EXUpdatesLegacyUpdate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesLegacyUpdate.h; sourceTree = "<group>"; };
+		9804E0AF1573203F9EC69461528EB5CF /* EXUpdatesSelectionPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesSelectionPolicy.h; sourceTree = "<group>"; };
+		9B7DCB094B5C0B725ACE3E6438BF17CE /* EXUpdatesAppLauncherNoDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesAppLauncherNoDatabase.h; sourceTree = "<group>"; };
+		A1243D6DDA5FB4B115F474C78C04E468 /* EXUpdates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EXUpdates.debug.xcconfig; sourceTree = "<group>"; };
+		A79535BCA4E5B4945669D26CC7D743A5 /* EXUpdatesCrypto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesCrypto.m; sourceTree = "<group>"; };
+		A9C10D1330F0BE5EA50E55BC97B5848D /* EXUpdatesUpdate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesUpdate.h; sourceTree = "<group>"; };
+		AD8C1BD9953FBE4EF3A8B15210FDFDAB /* EXUpdatesDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesDatabase.h; sourceTree = "<group>"; };
+		AE3D64CBDD664BA31C4C776CCAADB661 /* EXUpdatesSelectionPolicyNewestTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesSelectionPolicyNewestTests.m; path = Tests/EXUpdatesSelectionPolicyNewestTests.m; sourceTree = "<group>"; };
+		B2EFBF641AA4657459A537727336E948 /* EXUpdates-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EXUpdates-dummy.m"; sourceTree = "<group>"; };
+		B44F9FE85CE55E4D9FD95F9C74409676 /* Tests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Tests.m; path = Tests/Tests.m; sourceTree = "<group>"; };
+		BFDFF60EF6F64E624333186EA14BD985 /* EXUpdatesEmbeddedAppLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesEmbeddedAppLoader.h; sourceTree = "<group>"; };
+		C2BA2DA976B12306AEA6D11CC7346E1B /* EXUpdatesSelectionPolicyNewest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesSelectionPolicyNewest.h; sourceTree = "<group>"; };
+		CBCA3364086FCA4C42C74B0A5683CB1E /* EXUpdatesAppController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXUpdatesAppController.h; path = EXUpdates/EXUpdatesAppController.h; sourceTree = "<group>"; };
 		CC18AEF399D63F8C87F384599ED625A9 /* libEXUpdates.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libEXUpdates.a; path = libEXUpdates.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3FB3FFF13F7B78A76F22945CA1FF89F /* EXUpdatesEmbeddedAppLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesEmbeddedAppLoader.m; sourceTree = "<group>"; };
-		D4B2023E177610D437B5EA05B1F9115B /* EXUpdates-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EXUpdates-dummy.m"; sourceTree = "<group>"; };
-		DF161E38B2453FBA11DC56D9376CA36F /* EXUpdatesAppLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesAppLoader.m; sourceTree = "<group>"; };
-		E20A4B4BEE5F8D64EBA9B3CC3CB1483F /* EXUpdates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EXUpdates.debug.xcconfig; sourceTree = "<group>"; };
-		E66ED73C4264F7DC52B041F6C298EA46 /* EXUpdatesModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesModule.m; path = EXUpdates/EXUpdatesModule.m; sourceTree = "<group>"; };
-		E9097131B19DA30F448A6D61B88019DD /* EXUpdates-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EXUpdates-prefix.pch"; sourceTree = "<group>"; };
-		EA52B743CF06444855A14BFD572537BC /* EXUpdatesService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXUpdatesService.h; path = EXUpdates/EXUpdatesService.h; sourceTree = "<group>"; };
-		F788E761D59C89AD96B020C5D6D3D7A1 /* EXUpdatesAppLoaderTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesAppLoaderTask.m; sourceTree = "<group>"; };
-		F7DC1CF919A167368BAE78415B03DC24 /* EXUpdates.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = EXUpdates.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		FCE2A755D5D905DAE8BFD1D472AC8E7D /* EXUpdatesFileDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesFileDownloader.m; sourceTree = "<group>"; };
+		CDF7A22875121A405D949FFDFBB9075C /* EXUpdatesAppController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesAppController.m; path = EXUpdates/EXUpdatesAppController.m; sourceTree = "<group>"; };
+		D119BD4A4883B19F2D2C610B55D62F12 /* EXUpdatesCrypto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesCrypto.h; sourceTree = "<group>"; };
+		D8DF6ADE64375F8315A2E65586533046 /* EXUpdates.unit-tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "EXUpdates.unit-tests.release.xcconfig"; sourceTree = "<group>"; };
+		E0DD2F572BF1A778257B09A217AE4377 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E5753322C6704EFFA6DDF13261F38C7D /* EXUpdatesUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXUpdatesUtils.h; path = EXUpdates/EXUpdatesUtils.h; sourceTree = "<group>"; };
+		E7DA5E67EC092DE3C04C95B9181376F7 /* EXUpdatesService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXUpdatesService.m; path = EXUpdates/EXUpdatesService.m; sourceTree = "<group>"; };
+		EF83CAC104A9DF8E248892386CD0ADFD /* EXUpdatesReaper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesReaper.h; sourceTree = "<group>"; };
+		F07ADD43C05E5F30E10B25A675D23FD4 /* EXUpdatesAppLoaderTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesAppLoaderTask.m; sourceTree = "<group>"; };
+		F650C99889CD462B9AA10DC590374C68 /* EXUpdates-Unit-Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "EXUpdates-Unit-Tests-resources.sh"; sourceTree = "<group>"; };
+		F7189B503C311311F0C7DEAF950B0631 /* EXUpdatesNewUpdate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesNewUpdate.h; sourceTree = "<group>"; };
+		F884CE5C07FFEAB7182D40052F80EE02 /* EXUpdates.unit-tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "EXUpdates.unit-tests.debug.xcconfig"; sourceTree = "<group>"; };
+		FBC79FD9BFA640B15E91152F0E9001CA /* EXUpdatesDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EXUpdatesDatabase.m; sourceTree = "<group>"; };
+		FE6C20C9E43F43BB7CC29C5D37749D4D /* EXUpdatesRemoteAppLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EXUpdatesRemoteAppLoader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B7197415904808DF3E2288B536DA4A11 /* Frameworks */ = {
+		191538A59113130CA2A08848D6233AA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		619436483365A78D5265384E22D0E765 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE753EBC2093A5DF9BC0718CB44725B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0BBBB1CFFEAB665C9143DC53DFDB5E18 /* AppLauncher */ = {
-			isa = PBXGroup;
-			children = (
-				88F1C0AA09029BD3FD58F07FC5055962 /* EXUpdatesAppLauncher.h */,
-				00C0EAA88421094C900658BC0BCDC09F /* EXUpdatesAppLauncherNoDatabase.h */,
-				7422D5FA3CF288184B0A66815418A92D /* EXUpdatesAppLauncherNoDatabase.m */,
-				053DC4C79FB1A6E5CDC686ABAE480874 /* EXUpdatesAppLauncherWithDatabase.h */,
-				1F08B90616667C85FE541D6093A7D2D0 /* EXUpdatesAppLauncherWithDatabase.m */,
-				84DAF43F7FCCDFA87D9746A779CD3104 /* EXUpdatesSelectionPolicy.h */,
-				A6E63826BA983550372B90ACC09680DB /* EXUpdatesSelectionPolicyNewest.h */,
-				AE9863E640D56B031D3108F289ABE3D0 /* EXUpdatesSelectionPolicyNewest.m */,
-			);
-			name = AppLauncher;
-			path = EXUpdates/AppLauncher;
-			sourceTree = "<group>";
-		};
 		118E2339635B8C2DBA1AD9CFE8C4BC10 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,159 +189,207 @@
 			name = Dependencies;
 			sourceTree = "<group>";
 		};
-		2136DD01950E40D48DC1B1E8C3F739B7 /* EXUpdates */ = {
+		1CD9AEB4068A67B129E28A29AFF1669A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4F63D33C368FD092C9DE792B2413DBE /* EXUpdatesAppController.h */,
-				6B95B7A65603AA4CC0E85316648F30AD /* EXUpdatesAppController.m */,
-				418CF3B1A326F1AC1CF266D82879AD65 /* EXUpdatesConfig.h */,
-				617ADED5E9E268733E0C2771A98C3DFD /* EXUpdatesConfig.m */,
-				972338D8C2E31E9D1C74F0B29E8189EB /* EXUpdatesModule.h */,
-				E66ED73C4264F7DC52B041F6C298EA46 /* EXUpdatesModule.m */,
-				EA52B743CF06444855A14BFD572537BC /* EXUpdatesService.h */,
-				ABB2BFED427F2A6F344DB1AB8E93F159 /* EXUpdatesService.m */,
-				BAEE4C30702EC6C63927E9090A29E639 /* EXUpdatesUtils.h */,
-				C22F98F63991575D365644270AC2A686 /* EXUpdatesUtils.m */,
-				0BBBB1CFFEAB665C9143DC53DFDB5E18 /* AppLauncher */,
-				78BC5252CFEBB06B09DE20B921F0F6CF /* AppLoader */,
-				6D721947E0F965352894B9DF938BCC1A /* Database */,
-				C579F55077E1A9E0E4C834783EF722EA /* Pod */,
-				BF0B4A79106C0420EAD54F9837EB1113 /* Support Files */,
-				FE7CA521F73FCF02C9A4E8F28745F4C2 /* Update */,
+				7FBB39F43D5C7A9E8D303660A3594DA9 /* EXUpdates-Unit-Tests */,
+				CC18AEF399D63F8C87F384599ED625A9 /* libEXUpdates.a */,
 			);
-			name = EXUpdates;
-			path = "../../packages/expo-updates/ios";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		349FF5B6D8B1D11D819C5AB30D8DE3CD /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				AD8C1BD9953FBE4EF3A8B15210FDFDAB /* EXUpdatesDatabase.h */,
+				FBC79FD9BFA640B15E91152F0E9001CA /* EXUpdatesDatabase.m */,
+				EF83CAC104A9DF8E248892386CD0ADFD /* EXUpdatesReaper.h */,
+				639FDF46AFADE90E09F519BAAECC28DE /* EXUpdatesReaper.m */,
+			);
+			name = Database;
+			path = EXUpdates/Database;
+			sourceTree = "<group>";
+		};
+		37598D8D76E81E2818BABD59A11D38E7 /* AppLoader */ = {
+			isa = PBXGroup;
+			children = (
+				6FAD944B46592AA26F2839FCA2FD5841 /* EXUpdatesAppLoader.h */,
+				88D859535A10E14F7B949C7940B08913 /* EXUpdatesAppLoader.m */,
+				75FAD8A69CAA2BD5D16089B3A87A1FCE /* EXUpdatesAppLoader+Private.h */,
+				8C75ECBCF0B0ED6DA198FE3AC2652413 /* EXUpdatesAppLoaderTask.h */,
+				F07ADD43C05E5F30E10B25A675D23FD4 /* EXUpdatesAppLoaderTask.m */,
+				84E66E2AEDA7B5BAB19AD30CCBA7E699 /* EXUpdatesAsset.h */,
+				33AC86BC5825A29C4AE47E60A435F4A1 /* EXUpdatesAsset.m */,
+				D119BD4A4883B19F2D2C610B55D62F12 /* EXUpdatesCrypto.h */,
+				A79535BCA4E5B4945669D26CC7D743A5 /* EXUpdatesCrypto.m */,
+				BFDFF60EF6F64E624333186EA14BD985 /* EXUpdatesEmbeddedAppLoader.h */,
+				9009456F530481144CA9694B858BB858 /* EXUpdatesEmbeddedAppLoader.m */,
+				96A425E239924C459DBE407A4295FAC3 /* EXUpdatesFileDownloader.h */,
+				39D815DD76D97C106507387C5E8F25AA /* EXUpdatesFileDownloader.m */,
+				FE6C20C9E43F43BB7CC29C5D37749D4D /* EXUpdatesRemoteAppLoader.h */,
+				9116EBF0AC5338CD00DD4F787560B924 /* EXUpdatesRemoteAppLoader.m */,
+			);
+			name = AppLoader;
+			path = EXUpdates/AppLoader;
 			sourceTree = "<group>";
 		};
 		3F29A2691824F5DE951F0C397AD7E639 = {
 			isa = PBXGroup;
 			children = (
 				118E2339635B8C2DBA1AD9CFE8C4BC10 /* Dependencies */,
-				2136DD01950E40D48DC1B1E8C3F739B7 /* EXUpdates */,
-				541B534A3A5F00652507697647A42FD7 /* Frameworks */,
-				EB7AE6CA950EA532E84E3F0C894810F6 /* Products */,
+				70D14477C5651BC9AEC3A5E5B749B94E /* EXUpdates */,
+				F4E1D7C2262F4D8C99C8CEFB81D9A4EF /* Frameworks */,
+				1CD9AEB4068A67B129E28A29AFF1669A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		541B534A3A5F00652507697647A42FD7 /* Frameworks */ = {
+		4FE034142AB6B6B8823362D7A5F2F099 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E0DD2F572BF1A778257B09A217AE4377 /* Foundation.framework */,
 			);
-			name = Frameworks;
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		6D721947E0F965352894B9DF938BCC1A /* Database */ = {
+		586F7C8E6450733A0382DC6FC3B507BB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6EA76F9C044CFEB3D8039D821FE3FC04 /* EXUpdatesDatabase.h */,
-				C29492EE1970EF2FD96BAD81C947756E /* EXUpdatesDatabase.m */,
-				3EE9C823D6EED47DE7FCBA5E34B7E497 /* EXUpdatesReaper.h */,
-				3FD4374D2C3716A13EF98F681AF94C87 /* EXUpdatesReaper.m */,
+				32CA7029C54A1550578A144BC55D53BF /* EXUpdatesLegacyUpdateTests.m */,
+				5F30FDB42D5A45E68ACFB0626E043995 /* EXUpdatesNewUpdateTests.m */,
+				AE3D64CBDD664BA31C4C776CCAADB661 /* EXUpdatesSelectionPolicyNewestTests.m */,
+				7B7D32BAB56C27BDB54B40AD5D29CEEF /* EXUpdatesStructuredHeadersTests.m */,
+				4FF53185A3B337D51930C9D79AB93BA1 /* EXUpdatesUpdateTests.m */,
+				B44F9FE85CE55E4D9FD95F9C74409676 /* Tests.m */,
 			);
-			name = Database;
-			path = EXUpdates/Database;
+			name = Tests;
 			sourceTree = "<group>";
 		};
-		78BC5252CFEBB06B09DE20B921F0F6CF /* AppLoader */ = {
+		70D14477C5651BC9AEC3A5E5B749B94E /* EXUpdates */ = {
 			isa = PBXGroup;
 			children = (
-				4858AA76650231F5432B07900D2C8DD4 /* EXUpdatesAppLoader.h */,
-				DF161E38B2453FBA11DC56D9376CA36F /* EXUpdatesAppLoader.m */,
-				2C3E1500618A30F542507FA8425EE3DE /* EXUpdatesAppLoader+Private.h */,
-				329C42C457A523B7D2B1DCFF073D8F87 /* EXUpdatesAppLoaderTask.h */,
-				F788E761D59C89AD96B020C5D6D3D7A1 /* EXUpdatesAppLoaderTask.m */,
-				682F1F1D23EBF1BF4C9957C6F225E693 /* EXUpdatesAsset.h */,
-				45086DD2C624D4ECF9B79EE4070D0366 /* EXUpdatesAsset.m */,
-				0720C2629CEA2A241C4F1001C7377DEB /* EXUpdatesCrypto.h */,
-				A08ABA66C27F7D55CA15B20AC22B6C2F /* EXUpdatesCrypto.m */,
-				311CE29F5A2F2842E96251FF094A0AD3 /* EXUpdatesEmbeddedAppLoader.h */,
-				D3FB3FFF13F7B78A76F22945CA1FF89F /* EXUpdatesEmbeddedAppLoader.m */,
-				AC0CB3D3E5F3A828FCF8078A98C5EB70 /* EXUpdatesFileDownloader.h */,
-				FCE2A755D5D905DAE8BFD1D472AC8E7D /* EXUpdatesFileDownloader.m */,
-				B0CB12182CFF1445CFFC93DF08925ED4 /* EXUpdatesRemoteAppLoader.h */,
-				718DDD11450B0F0428B77D0D7ADEBC86 /* EXUpdatesRemoteAppLoader.m */,
+				CBCA3364086FCA4C42C74B0A5683CB1E /* EXUpdatesAppController.h */,
+				CDF7A22875121A405D949FFDFBB9075C /* EXUpdatesAppController.m */,
+				42043E131A65FFBB7E1CFC5CCBB28DCD /* EXUpdatesConfig.h */,
+				27AC470EAAFF474A911DA8389047C3EC /* EXUpdatesConfig.m */,
+				3FC935091642FB7C66F74055FCA048B0 /* EXUpdatesModule.h */,
+				6E5BE64345F57529695D93435297E0D5 /* EXUpdatesModule.m */,
+				4D742702BAC123EEEBC25BA04E587B7D /* EXUpdatesService.h */,
+				E7DA5E67EC092DE3C04C95B9181376F7 /* EXUpdatesService.m */,
+				65555C8AD67F97680DCD8C3D5F39AC4E /* EXUpdatesStructuredHeaders.h */,
+				39DDE36F859BEFB02DDEFAB564AC9820 /* EXUpdatesStructuredHeaders.m */,
+				E5753322C6704EFFA6DDF13261F38C7D /* EXUpdatesUtils.h */,
+				069D632FB2E1BD78B7C272F063C322E9 /* EXUpdatesUtils.m */,
+				BB4FE46EE219EE5B742768F8AE4B05B1 /* AppLauncher */,
+				37598D8D76E81E2818BABD59A11D38E7 /* AppLoader */,
+				349FF5B6D8B1D11D819C5AB30D8DE3CD /* Database */,
+				FE7239B0B0F3114571E78FE3D57C3D5E /* Pod */,
+				8A452833D5B9C3BAF10F0E191998DCDA /* Support Files */,
+				586F7C8E6450733A0382DC6FC3B507BB /* Tests */,
+				DDA617C2E4A181B981D49B75110B827E /* Update */,
 			);
-			name = AppLoader;
-			path = EXUpdates/AppLoader;
+			name = EXUpdates;
+			path = "../../packages/expo-updates/ios";
 			sourceTree = "<group>";
 		};
-		BF0B4A79106C0420EAD54F9837EB1113 /* Support Files */ = {
+		8A452833D5B9C3BAF10F0E191998DCDA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D4B2023E177610D437B5EA05B1F9115B /* EXUpdates-dummy.m */,
-				E9097131B19DA30F448A6D61B88019DD /* EXUpdates-prefix.pch */,
-				E20A4B4BEE5F8D64EBA9B3CC3CB1483F /* EXUpdates.debug.xcconfig */,
-				3F46C1463DE53FF41C9AA839087E5161 /* EXUpdates.release.xcconfig */,
+				B2EFBF641AA4657459A537727336E948 /* EXUpdates-dummy.m */,
+				50F42DB63AAEEE15444C258314621FD1 /* EXUpdates-prefix.pch */,
+				1783B87D9DE5D10C775A89104F52B7E4 /* EXUpdates-Unit-Tests-Info.plist */,
+				2DA9D5AF82D8141AFA492C592A371195 /* EXUpdates-Unit-Tests-prefix.pch */,
+				F650C99889CD462B9AA10DC590374C68 /* EXUpdates-Unit-Tests-resources.sh */,
+				A1243D6DDA5FB4B115F474C78C04E468 /* EXUpdates.debug.xcconfig */,
+				5E6BC2A2DF3BF216ECF2A014ACD52F6D /* EXUpdates.release.xcconfig */,
+				F884CE5C07FFEAB7182D40052F80EE02 /* EXUpdates.unit-tests.debug.xcconfig */,
+				D8DF6ADE64375F8315A2E65586533046 /* EXUpdates.unit-tests.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../../../ios/Pods/Target Support Files/EXUpdates";
 			sourceTree = "<group>";
 		};
-		C579F55077E1A9E0E4C834783EF722EA /* Pod */ = {
+		BB4FE46EE219EE5B742768F8AE4B05B1 /* AppLauncher */ = {
 			isa = PBXGroup;
 			children = (
-				F7DC1CF919A167368BAE78415B03DC24 /* EXUpdates.podspec */,
+				970C0C29C4CB014F76BD4DBB8D345A4F /* EXUpdatesAppLauncher.h */,
+				9B7DCB094B5C0B725ACE3E6438BF17CE /* EXUpdatesAppLauncherNoDatabase.h */,
+				2927FFAEFCA15A0258F09283AF0376B0 /* EXUpdatesAppLauncherNoDatabase.m */,
+				192F1498F3456E9050D4EC5DC68C5C28 /* EXUpdatesAppLauncherWithDatabase.h */,
+				409D3188BBC069091E15CE09D4DD9896 /* EXUpdatesAppLauncherWithDatabase.m */,
+				9804E0AF1573203F9EC69461528EB5CF /* EXUpdatesSelectionPolicy.h */,
+				C2BA2DA976B12306AEA6D11CC7346E1B /* EXUpdatesSelectionPolicyNewest.h */,
+				2383B41C2B46EBD74D02DEF2048CD2E0 /* EXUpdatesSelectionPolicyNewest.m */,
 			);
-			name = Pod;
+			name = AppLauncher;
+			path = EXUpdates/AppLauncher;
 			sourceTree = "<group>";
 		};
-		EB7AE6CA950EA532E84E3F0C894810F6 /* Products */ = {
+		DDA617C2E4A181B981D49B75110B827E /* Update */ = {
 			isa = PBXGroup;
 			children = (
-				CC18AEF399D63F8C87F384599ED625A9 /* libEXUpdates.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		FE7CA521F73FCF02C9A4E8F28745F4C2 /* Update */ = {
-			isa = PBXGroup;
-			children = (
-				57765538D8700E14D12ED177365C381E /* EXUpdatesBareUpdate.h */,
-				A3F2CCD8D9D211B039AFBDB76D2135DD /* EXUpdatesBareUpdate.m */,
-				8F8F240BF34CED7BECDE56ABD7F0DA86 /* EXUpdatesLegacyUpdate.h */,
-				4384E7652605CD8976AC579379B2BED1 /* EXUpdatesLegacyUpdate.m */,
-				8CE5EF7051C3C054F297518B23888C58 /* EXUpdatesNewUpdate.h */,
-				B58B98703F97B5E383B29A123793AA20 /* EXUpdatesNewUpdate.m */,
-				11CF9959DE25ED98F55FCB90F9EC0B13 /* EXUpdatesUpdate.h */,
-				183DBF162612BF8D6ED94B66A089E1C9 /* EXUpdatesUpdate.m */,
-				94FE651C354BF3F5FB48B99EF1230542 /* EXUpdatesUpdate+Private.h */,
+				821A5D1F397DE6843CEAF0ED2C54069A /* EXUpdatesBareUpdate.h */,
+				915AB44DEAEA8C321B6FFC39D1515BED /* EXUpdatesBareUpdate.m */,
+				975DD97F8B92A08886EA3F1338E717F2 /* EXUpdatesLegacyUpdate.h */,
+				1D5B5F8CD8C2B62B67033D07BC3A80A0 /* EXUpdatesLegacyUpdate.m */,
+				F7189B503C311311F0C7DEAF950B0631 /* EXUpdatesNewUpdate.h */,
+				41884586081ACD94A31579CB670696C7 /* EXUpdatesNewUpdate.m */,
+				A9C10D1330F0BE5EA50E55BC97B5848D /* EXUpdatesUpdate.h */,
+				8BC77BC2A94BAA1AE6C4A6683CA57424 /* EXUpdatesUpdate.m */,
+				4399137F4CA79FB0B5C4483D0A7AA745 /* EXUpdatesUpdate+Private.h */,
 			);
 			name = Update;
 			path = EXUpdates/Update;
 			sourceTree = "<group>";
 		};
+		F4E1D7C2262F4D8C99C8CEFB81D9A4EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FE034142AB6B6B8823362D7A5F2F099 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE7239B0B0F3114571E78FE3D57C3D5E /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				58F221F4EC4E2ADA685868B95307A96F /* EXUpdates.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F737B86D76B16297E3CC9F22721CA3CB /* Headers */ = {
+		4AC8D76F59A61E524F589E88A9211494 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				373E6A513D4FA443C87DC2C2FE3F84C4 /* EXUpdatesAppController.h in Headers */,
-				2102BBD667DBD9565132BB82A0BD91BB /* EXUpdatesAppLauncher.h in Headers */,
-				EBDA3CB13EFE50E09B306E18D198F6E0 /* EXUpdatesAppLauncherNoDatabase.h in Headers */,
-				B5AA505F9DD89F85C10112C386A6A1EF /* EXUpdatesAppLauncherWithDatabase.h in Headers */,
-				7B1BABE97E1AA096E72949EB37DEE4B1 /* EXUpdatesAppLoader+Private.h in Headers */,
-				33AE42602C73CD7B6102FE66E348ED3B /* EXUpdatesAppLoader.h in Headers */,
-				4137D2029EA52E7E57964C3ADB033E3A /* EXUpdatesAppLoaderTask.h in Headers */,
-				74E92D665835AE7AF5C69C5425BB5C8E /* EXUpdatesAsset.h in Headers */,
-				926191F21DC50E0C580AB4ADFB698CA4 /* EXUpdatesBareUpdate.h in Headers */,
-				0595BADE9C43F4EC02D5028228B271DB /* EXUpdatesConfig.h in Headers */,
-				1B5579CDE6645026236954C445634B72 /* EXUpdatesCrypto.h in Headers */,
-				7FA6D8A20F35718B23DBC257B92C017D /* EXUpdatesDatabase.h in Headers */,
-				9957910A98DA17622262C56919937A5B /* EXUpdatesEmbeddedAppLoader.h in Headers */,
-				49636D27BF8E0B65098CF65B585BF349 /* EXUpdatesFileDownloader.h in Headers */,
-				605F63B89F88BE5C17629D7E278DD050 /* EXUpdatesLegacyUpdate.h in Headers */,
-				597521B69E821A23BDB913A4783CA028 /* EXUpdatesModule.h in Headers */,
-				7811C05A150775741343E5BF9CBF8B57 /* EXUpdatesNewUpdate.h in Headers */,
-				C29D40A551287565AAEBC5338EA3B99B /* EXUpdatesReaper.h in Headers */,
-				87C0E919902AA46DE9417B4084C583DB /* EXUpdatesRemoteAppLoader.h in Headers */,
-				AAF7AA2001D6583995653C9AA80AFA50 /* EXUpdatesSelectionPolicy.h in Headers */,
-				D97CF0BD9273D33173B49693A6443911 /* EXUpdatesSelectionPolicyNewest.h in Headers */,
-				B9DD1D651431A2E7F0B43998308BC716 /* EXUpdatesService.h in Headers */,
-				F5BC71353545F24178E92011C6F2E4A3 /* EXUpdatesUpdate+Private.h in Headers */,
-				C595DD31D0B755AA21CF6E3BB7698780 /* EXUpdatesUpdate.h in Headers */,
-				3E2ED41AC373A252D56DA433637F05EB /* EXUpdatesUtils.h in Headers */,
+				0C5EED2B570FDB2F6115D384B7C7088D /* EXUpdatesAppController.h in Headers */,
+				3CC241690C35F98D15701688D5F6009F /* EXUpdatesAppLauncher.h in Headers */,
+				EFC402C7A17C0F8C4E2F2888D589D5F7 /* EXUpdatesAppLauncherNoDatabase.h in Headers */,
+				B1A3B2EA3767FFE8397486887011BF7A /* EXUpdatesAppLauncherWithDatabase.h in Headers */,
+				E453ADF6FE0EABC61A017C225712330E /* EXUpdatesAppLoader+Private.h in Headers */,
+				B3AD398CA59E4B0814AB53659AC221B7 /* EXUpdatesAppLoader.h in Headers */,
+				07608F92DEE8FC95616B7422612D9214 /* EXUpdatesAppLoaderTask.h in Headers */,
+				F9E5E6A25048FA83A04137A3AF684EEB /* EXUpdatesAsset.h in Headers */,
+				FC14C974B473B8727F4071D28957FE50 /* EXUpdatesBareUpdate.h in Headers */,
+				F3B9E0916AA4734B07D6B9CE62D38EFD /* EXUpdatesConfig.h in Headers */,
+				014DA82EC058AE52E2E9A042D6220E0B /* EXUpdatesCrypto.h in Headers */,
+				77BC381DC602F331E8D29EACD3385C3D /* EXUpdatesDatabase.h in Headers */,
+				C2F1830DBC4B088137A724B548A4B2C8 /* EXUpdatesEmbeddedAppLoader.h in Headers */,
+				A7B0AE35C38727F3F1C8EF2B7424136F /* EXUpdatesFileDownloader.h in Headers */,
+				1F7D04FCC6C744061FD06C60532CC898 /* EXUpdatesLegacyUpdate.h in Headers */,
+				8B567B11F6A209A456AEB842646C0A70 /* EXUpdatesModule.h in Headers */,
+				2713F70A6BA9E5FF85F1266E84B37B86 /* EXUpdatesNewUpdate.h in Headers */,
+				44AE35BCAF91912F596FA50FDFF6126E /* EXUpdatesReaper.h in Headers */,
+				C3443FB62FB12C4D51A8CA09EA2CF84A /* EXUpdatesRemoteAppLoader.h in Headers */,
+				3C49F56F192AC2F015BE6688C523D7F0 /* EXUpdatesSelectionPolicy.h in Headers */,
+				6FD0BF8D76DCC6EA6F8D964EA0598830 /* EXUpdatesSelectionPolicyNewest.h in Headers */,
+				EBE66F767A491C95EA7C12CE5A69797F /* EXUpdatesService.h in Headers */,
+				C8801314E976F1BBBDDD8A1005305C6A /* EXUpdatesStructuredHeaders.h in Headers */,
+				BA6B0CF36F0677CAC7C7DD36B6E302F6 /* EXUpdatesUpdate+Private.h in Headers */,
+				CC9D06316B80FC0A7051DAEEF5968CBA /* EXUpdatesUpdate.h in Headers */,
+				A569556265CB3D01F6BFDFE9BED8CE03 /* EXUpdatesUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,22 +398,41 @@
 /* Begin PBXNativeTarget section */
 		076FF2640FFF3466FB36FD12A629113A /* EXUpdates */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6B43B6B45FAB7375D23F9F7949F7497C /* Build configuration list for PBXNativeTarget "EXUpdates" */;
+			buildConfigurationList = B70CD01B385BB7286EDAA71FD1A10C47 /* Build configuration list for PBXNativeTarget "EXUpdates" */;
 			buildPhases = (
-				F737B86D76B16297E3CC9F22721CA3CB /* Headers */,
-				8760CA27C496F3B5885D2EFA086AC5DD /* Sources */,
-				B7197415904808DF3E2288B536DA4A11 /* Frameworks */,
+				4AC8D76F59A61E524F589E88A9211494 /* Headers */,
+				A006DEE3B31D3E63370E0D90C53442AC /* Sources */,
+				191538A59113130CA2A08848D6233AA7 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AE27E68B8EA6E824D95438FB7E35B0F8 /* PBXTargetDependency */,
-				21B5506FB22014B7CDC39C22956D9A64 /* PBXTargetDependency */,
+				7194CDD631016A535F6F69A0383E9E5C /* PBXTargetDependency */,
+				E27BC0B6975EEAC01C68753909864CD3 /* PBXTargetDependency */,
 			);
 			name = EXUpdates;
 			productName = EXUpdates;
 			productReference = CC18AEF399D63F8C87F384599ED625A9 /* libEXUpdates.a */;
 			productType = "com.apple.product-type.library.static";
+		};
+		E0101EE607B08EC3FB6C17CF1D882320 /* EXUpdates-Unit-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39D37BB93BD0DB8C7AAA8939445D0405 /* Build configuration list for PBXNativeTarget "EXUpdates-Unit-Tests" */;
+			buildPhases = (
+				A14C6F3CEC5F4F04A168CDF22CBF2FD8 /* Sources */,
+				619436483365A78D5265384E22D0E765 /* Frameworks */,
+				246B90315CB5591F92BC1ABFD8289DEA /* Resources */,
+				FD4DC0132FD38ECB8F0B250DDDD831DD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0841883E0DE1F57808E5D42AECBC6D5C /* PBXTargetDependency */,
+			);
+			name = "EXUpdates-Unit-Tests";
+			productName = "EXUpdates-Unit-Tests";
+			productReference = 7FBB39F43D5C7A9E8D303660A3594DA9 /* EXUpdates-Unit-Tests */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -362,7 +452,7 @@
 				Base,
 			);
 			mainGroup = 3F29A2691824F5DE951F0C397AD7E639;
-			productRefGroup = EB7AE6CA950EA532E84E3F0C894810F6 /* Products */;
+			productRefGroup = 1CD9AEB4068A67B129E28A29AFF1669A /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
@@ -375,59 +465,136 @@
 			projectRoot = "";
 			targets = (
 				076FF2640FFF3466FB36FD12A629113A /* EXUpdates */,
+				E0101EE607B08EC3FB6C17CF1D882320 /* EXUpdates-Unit-Tests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		246B90315CB5591F92BC1ABFD8289DEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FD4DC0132FD38ECB8F0B250DDDD831DD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/EXUpdates/EXUpdates-Unit-Tests-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/EXUpdates/EXUpdates-Unit-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		8760CA27C496F3B5885D2EFA086AC5DD /* Sources */ = {
+		A006DEE3B31D3E63370E0D90C53442AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C544809719DFE05123F827771F870FB6 /* EXUpdates-dummy.m in Sources */,
-				94ABC0CCB03AD29DA97FFAEBF54765E7 /* EXUpdatesAppController.m in Sources */,
-				6BD6F0C168C1F46317D598467965719C /* EXUpdatesAppLauncherNoDatabase.m in Sources */,
-				905E6A359CF7F72CE7EC16106A046394 /* EXUpdatesAppLauncherWithDatabase.m in Sources */,
-				43C1B6C8ACE6CE960E5EE9B8451CEC90 /* EXUpdatesAppLoader.m in Sources */,
-				3815650C145A23305F73F23BDF40FD7C /* EXUpdatesAppLoaderTask.m in Sources */,
-				737D0065B2C86604EDFAFF3B671F9464 /* EXUpdatesAsset.m in Sources */,
-				B58B4E19B9C644B81C4B363579D7611F /* EXUpdatesBareUpdate.m in Sources */,
-				CDDDCC080AB901DFF88C1280C46BA2F4 /* EXUpdatesConfig.m in Sources */,
-				31D7230FFB1C6E3173CFB32438A2122B /* EXUpdatesCrypto.m in Sources */,
-				1FB3877DCB66A20863E019CE00B0B8D0 /* EXUpdatesDatabase.m in Sources */,
-				0E065386C75F7C309B0AC2267A512CF7 /* EXUpdatesEmbeddedAppLoader.m in Sources */,
-				D4C791240F422C86885056A22BE73E34 /* EXUpdatesFileDownloader.m in Sources */,
-				FF34FDB812A14B5E60EF3327CD2C06A9 /* EXUpdatesLegacyUpdate.m in Sources */,
-				E961A96B1DF44642CD7E525A132FF523 /* EXUpdatesModule.m in Sources */,
-				D00C7B9D0F2EF1F40C19E6B45D33AF32 /* EXUpdatesNewUpdate.m in Sources */,
-				CA89ACD0627630B950739F9482D438FB /* EXUpdatesReaper.m in Sources */,
-				AB388E64EE82494BE4CF43736A1A05A5 /* EXUpdatesRemoteAppLoader.m in Sources */,
-				24B4C212311603488CD05B28E35D1FEA /* EXUpdatesSelectionPolicyNewest.m in Sources */,
-				50F095DBF1AF2802C3C779B2A07CB56A /* EXUpdatesService.m in Sources */,
-				A49FC24134526EB6CE3D09B54C520CAA /* EXUpdatesUpdate.m in Sources */,
-				165FF2C425D718DF12768EB9B743F01E /* EXUpdatesUtils.m in Sources */,
+				03461C212F3809B846869431557F2974 /* EXUpdates-dummy.m in Sources */,
+				EE68C18251165CD92E6946B836CB5B4A /* EXUpdatesAppController.m in Sources */,
+				0C0A7D9CCE6CCB76B264E2FDD501E1D6 /* EXUpdatesAppLauncherNoDatabase.m in Sources */,
+				A71430DB1D1FF74222D8EA0489B80695 /* EXUpdatesAppLauncherWithDatabase.m in Sources */,
+				A05160E205E80A14971FADBF5C73410C /* EXUpdatesAppLoader.m in Sources */,
+				1E3851E82B543ECD8FEB891CDD916256 /* EXUpdatesAppLoaderTask.m in Sources */,
+				3940934029D1973B04DC6BC99F6D6B3D /* EXUpdatesAsset.m in Sources */,
+				30077E58D215442BBD95CC0FE205E311 /* EXUpdatesBareUpdate.m in Sources */,
+				A8550EEDF4E337FE15D54F6EFA25144C /* EXUpdatesConfig.m in Sources */,
+				A148507966E2CEBC847A699AAAC0ACC5 /* EXUpdatesCrypto.m in Sources */,
+				A157C716D70784414E18B64E8F39705C /* EXUpdatesDatabase.m in Sources */,
+				0FB94568A9F13F3FE29F4161DC06A236 /* EXUpdatesEmbeddedAppLoader.m in Sources */,
+				3E61F5EC3A6442684D058CAE73E16BD1 /* EXUpdatesFileDownloader.m in Sources */,
+				9E03EF8E606340DD1A93C38076FFFC77 /* EXUpdatesLegacyUpdate.m in Sources */,
+				1081FEBAF105FC8D84074EB17605E128 /* EXUpdatesModule.m in Sources */,
+				F3F8A40849AA0F915DF1964F20BFFB34 /* EXUpdatesNewUpdate.m in Sources */,
+				BF519668DE8EB8E9DCD5A1EBDFA826A0 /* EXUpdatesReaper.m in Sources */,
+				57D6949CE56D55CAC3C4A3152EBB485C /* EXUpdatesRemoteAppLoader.m in Sources */,
+				C741730160B2517A8F420019F4D364C3 /* EXUpdatesSelectionPolicyNewest.m in Sources */,
+				01EF629F3FA8E35117A95A050AB484B9 /* EXUpdatesService.m in Sources */,
+				220A3BB67B12F29CD1EC1F9A38AB9E91 /* EXUpdatesStructuredHeaders.m in Sources */,
+				930CD041D1442CC7E25EBCDAD20A4892 /* EXUpdatesUpdate.m in Sources */,
+				D430904E2EA5F88E6220B6B3F5A85EA0 /* EXUpdatesUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A14C6F3CEC5F4F04A168CDF22CBF2FD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				790FE28D260EFABB63F4B4F3378FE311 /* EXUpdatesLegacyUpdateTests.m in Sources */,
+				7962B8216B53DD10C5A6B6E2322184BF /* EXUpdatesNewUpdateTests.m in Sources */,
+				9CD14879D0BC9C5466C12B2D9EF20D57 /* EXUpdatesSelectionPolicyNewestTests.m in Sources */,
+				4E7004388603C11C81499FEA1454B9FA /* EXUpdatesStructuredHeadersTests.m in Sources */,
+				0E03ADC097341D8243F8E5A4CC3BFF60 /* EXUpdatesUpdateTests.m in Sources */,
+				8C50269A7C57E7B2EDC3A0D9F3D27B3F /* Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		21B5506FB22014B7CDC39C22956D9A64 /* PBXTargetDependency */ = {
+		0841883E0DE1F57808E5D42AECBC6D5C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = UMCore;
-			targetProxy = B1A30BBCF675D53F8D3451989990A241 /* PBXContainerItemProxy */;
+			name = EXUpdates;
+			target = 076FF2640FFF3466FB36FD12A629113A /* EXUpdates */;
+			targetProxy = 2B6820CC528DDF9E8396CE35AAD02D75 /* PBXContainerItemProxy */;
 		};
-		AE27E68B8EA6E824D95438FB7E35B0F8 /* PBXTargetDependency */ = {
+		7194CDD631016A535F6F69A0383E9E5C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "React-Core";
-			targetProxy = 365CBAC19B40416DF9B60F4634FE0804 /* PBXContainerItemProxy */;
+			targetProxy = 6943E055A8932D7FC64FFE579B0690F7 /* PBXContainerItemProxy */;
+		};
+		E27BC0B6975EEAC01C68753909864CD3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UMCore;
+			targetProxy = E3D2BFFB24EFF3A2CDC8AB3D6A043763 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		502CF7E7862F41D10A78645A9939A734 /* Release */ = {
+		0FFAB3E6E3690DEB52FC5B6DFE92EC73 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F46C1463DE53FF41C9AA839087E5161 /* EXUpdates.release.xcconfig */;
+			baseConfigurationReference = F884CE5C07FFEAB7182D40052F80EE02 /* EXUpdates.unit-tests.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/EXUpdates/EXUpdates-Unit-Tests-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EXUpdates/EXUpdates-Unit-Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "EXUpdates-Unit-Tests";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7DE20FEF02E1A1888E2C1C03DDC67048 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1243D6DDA5FB4B115F474C78C04E468 /* EXUpdates.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -447,9 +614,8 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		8F6BF654E64017A12A8DDD46767E6E30 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -510,6 +676,32 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		967A1BF0E2F6D1643AB748C8ACEFFF9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E6BC2A2DF3BF216ECF2A014ACD52F6D /* EXUpdates.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/EXUpdates/EXUpdates-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = EXUpdates;
+				PRODUCT_NAME = EXUpdates;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -579,30 +771,31 @@
 			};
 			name = Debug;
 		};
-		DA419C206D7548F06B923C35E2FB4C04 /* Debug */ = {
+		E34F13964F513653C61C839CE6702E1F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E20A4B4BEE5F8D64EBA9B3CC3CB1483F /* EXUpdates.debug.xcconfig */;
+			baseConfigurationReference = D8DF6ADE64375F8315A2E65586533046 /* EXUpdates.unit-tests.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/EXUpdates/EXUpdates-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/EXUpdates/EXUpdates-Unit-Tests-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EXUpdates/EXUpdates-Unit-Tests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = EXUpdates;
-				PRODUCT_NAME = EXUpdates;
+				PRODUCT_NAME = "EXUpdates-Unit-Tests";
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -616,11 +809,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6B43B6B45FAB7375D23F9F7949F7497C /* Build configuration list for PBXNativeTarget "EXUpdates" */ = {
+		39D37BB93BD0DB8C7AAA8939445D0405 /* Build configuration list for PBXNativeTarget "EXUpdates-Unit-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DA419C206D7548F06B923C35E2FB4C04 /* Debug */,
-				502CF7E7862F41D10A78645A9939A734 /* Release */,
+				0FFAB3E6E3690DEB52FC5B6DFE92EC73 /* Debug */,
+				E34F13964F513653C61C839CE6702E1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B70CD01B385BB7286EDAA71FD1A10C47 /* Build configuration list for PBXNativeTarget "EXUpdates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DE20FEF02E1A1888E2C1C03DDC67048 /* Debug */,
+				967A1BF0E2F6D1643AB748C8ACEFFF9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
