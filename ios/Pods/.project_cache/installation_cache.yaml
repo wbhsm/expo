@@ -9198,7 +9198,14 @@ CACHE_KEYS:
     FILES:
       - "../../packages/expo-structured-headers/ios/EXStructuredHeaders/EXStructuredHeadersParser.h"
       - "../../packages/expo-structured-headers/ios/EXStructuredHeaders/EXStructuredHeadersParser.m"
+      - "../../packages/expo-structured-headers/ios/Tests/EXStructuredHeadersParserIgnoringParametersTests.m"
       - "../../packages/expo-structured-headers/ios/Tests/EXStructuredHeadersParserTests.m"
+      - "../../packages/expo-structured-headers/ios/Tests/EXStructuredHeadersTestFixtures.h"
+      - "../../packages/expo-structured-headers/ios/Tests/EXStructuredHeadersTestFixtures.m"
+      - "../../packages/expo-structured-headers/ios/Tests/NSArray+EXStructuredHeadersTests.h"
+      - "../../packages/expo-structured-headers/ios/Tests/NSArray+EXStructuredHeadersTests.m"
+      - "../../packages/expo-structured-headers/ios/Tests/NSDictionary+EXStructuredHeadersTests.h"
+      - "../../packages/expo-structured-headers/ios/Tests/NSDictionary+EXStructuredHeadersTests.m"
     PROJECT_NAME: EXStructuredHeaders
     SPECS:
       - EXStructuredHeaders (1.0.0)
