@@ -10,11 +10,21 @@ NS_ASSUME_NONNULL_BEGIN
 {
   // dictionaries in the expected results are represented as arrays of tuplets [key, value]
   if ([object isKindOfClass:[NSDictionary class]]) {
-    NSMutableArray *arrayToCompare = [NSMutableArray arrayWithCapacity:((NSDictionary *)object).count];
-    [(NSDictionary *)object enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-      [arrayToCompare addObject:@[key, obj]];
-    }];
-    return [self isEqualToArray:arrayToCompare.copy];
+    NSMutableDictionary *dictionaryToCompare = [NSMutableDictionary dictionaryWithCapacity:self.count];
+    for (id member in self) {
+      if (![member isKindOfClass:[NSArray class]] || ((NSArray *)member).count != 2) {
+        // self is not a dictionary represented as an array of tuplets, so it isn't equal to object
+        return NO;
+      }
+      id key = member[0];
+      id value = member[1];
+      if (dictionaryToCompare[key] != nil) {
+        // there are multiple duplicate keys, so self is not in the format we would expect for a dictionary
+        return NO;
+      }
+      dictionaryToCompare[key] = value;
+    }
+    return [dictionaryToCompare.copy isEqualToDictionary:object];
   }
   
   // plain isEqual implementation
