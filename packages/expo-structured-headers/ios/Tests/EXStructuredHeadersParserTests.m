@@ -113,4 +113,94 @@
 
 // GENERATED TESTS BEGIN
 
+- (void)testBinary
+{
+  [self runTests:EXStructuredHeadersBinaryTests];
+}
+
+- (void)testBoolean
+{
+  [self runTests:EXStructuredHeadersBooleanTests];
+}
+
+- (void)testDictionary
+{
+  [self runTests:EXStructuredHeadersDictionaryTests];
+}
+
+- (void)testExamples
+{
+  [self runTests:EXStructuredHeadersExamplesTests];
+}
+
+- (void)testItem
+{
+  [self runTests:EXStructuredHeadersItemTests];
+}
+
+- (void)testKeyGenerated
+{
+  [self runTests:EXStructuredHeadersKeyGeneratedTests];
+}
+
+- (void)testLargeGenerated
+{
+  [self runTests:EXStructuredHeadersLargeGeneratedTests];
+}
+
+- (void)testList
+{
+  [self runTests:EXStructuredHeadersListTests];
+}
+
+- (void)testListlist
+{
+  [self runTests:EXStructuredHeadersListlistTests];
+}
+
+- (void)testNumberGenerated
+{
+  [self runTests:EXStructuredHeadersNumberGeneratedTests];
+}
+
+- (void)testNumber
+{
+  [self runTests:EXStructuredHeadersNumberTests];
+}
+
+- (void)testParamDict
+{
+  [self runTests:EXStructuredHeadersParamDictTests];
+}
+
+- (void)testParamList
+{
+  [self runTests:EXStructuredHeadersParamListTests];
+}
+
+- (void)testParamListlist
+{
+  [self runTests:EXStructuredHeadersParamListlistTests];
+}
+
+- (void)testStringGenerated
+{
+  [self runTests:EXStructuredHeadersStringGeneratedTests];
+}
+
+- (void)testString
+{
+  [self runTests:EXStructuredHeadersStringTests];
+}
+
+- (void)testTokenGenerated
+{
+  [self runTests:EXStructuredHeadersTokenGeneratedTests];
+}
+
+- (void)testToken
+{
+  [self runTests:EXStructuredHeadersTokenTests];
+}
+
 @end
