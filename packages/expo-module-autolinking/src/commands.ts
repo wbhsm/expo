@@ -54,18 +54,18 @@ function registerSearchingCommand(
     .command(`${commandName} [paths...]`)
     .option(
       '-p, --platform [platform]',
-      'The platform that the resulted modules must support. Available options: "ios", "android"',
+      'The platform that the resulting modules must support. Available options: "ios", "android"',
       'ios'
     )
     .option<string[] | null>(
       '-i, --ignore-paths [ignorePaths...]',
-      'Paths to ignore when looking up for modules.',
+      'Paths to ignore when looking up modules.',
       (value, previous) => (previous ?? []).concat(value),
       null
     )
     .option<string[] | null>(
       '-e, --exclude [exclude...]',
-      'Package names to exclude when looking up for modules.',
+      'Package names to exclude when looking up modules.',
       (value, previous) => (previous ?? []).concat(value),
       null
     )
