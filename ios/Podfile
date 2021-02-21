@@ -38,9 +38,11 @@ target 'Exponent' do
   # Unversioned React Native
   use_react_native! path: '../react-native-lab/react-native'
 
-  # Evaluate all files matching `versioned-react-native/ABI*/dependencies.rb` glob pattern
-  # and install ReactABIXX_0_0 pods with all versioned unimodules.
-  use_versioned_abis!
+  if ENV['EXPO_USE_VERSIONED'].to_i != 0
+    # Evaluate all files matching `versioned-react-native/ABI*/dependencies.rb` glob pattern
+    # and install ReactABIXX_0_0 pods with all versioned unimodules.
+    use_versioned_abis!
+  end
 
   # Build React Native with RCT_DEV enabled and RCT_ENABLE_INSPECTOR and
   # RCT_ENABLE_PACKAGER_CONNECTION disabled
@@ -51,9 +53,12 @@ target 'Exponent' do
 
     installer.target_installation_results.pod_target_installation_results
       .each do |pod_name, target_installation_result|
-      # Run postinstalls actions for versioned dependencies.
-      # These actions are specified in `versioned-react-native/ABI*/postinstalls.rb` files.
-      run_versioned_postinstalls!(pod_name, target_installation_result)
+
+      if ENV['EXPO_USE_VERSIONED'].to_i != 0
+        # Run postinstalls actions for versioned dependencies.
+        # These actions are specified in `versioned-react-native/ABI*/postinstalls.rb` files.
+        run_versioned_postinstalls!(pod_name, target_installation_result)
+      end
 
       target_installation_result.native_target.build_configurations.each do |config|
         config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'

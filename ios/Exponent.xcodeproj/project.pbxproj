@@ -359,8 +359,6 @@
 		E076A3A138374780BD9CAEA0 /* RCTOnPageScrollEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCE476CA6D546178EEF9B3C /* RCTOnPageScrollEvent.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		E75397FDFB6B4FF780EA612A /* RNCSegmentedControlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F502F71E43A44658A6B20C26 /* RNCSegmentedControlManager.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		E77A18FAA07E47EFBBDD7338 /* ReactNativePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D6195E420E433AA7BB8584 /* ReactNativePageView.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		E7F4DCD62B6043AEB2B9F2B5 /* RNCWebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E68AB99C5B4BA58B372F19 /* RNCWebViewManager.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		E7A65010FA85413EA748C757 /* RNCPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AEDCCD9FDB4296B2B4AF5E /* RNCPicker.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		EE4681A896274B6C8E39B2CB /* MapperRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A61C6958F2449DCA0E47A15 /* MapperRegistry.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		EF5E8C163603C21D7DA45E6C /* libPods-ExponentIntegrationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D52770593795F4C7AC872315 /* libPods-ExponentIntegrationTests.a */; };
 		F108698B2448B11D00B7DC04 /* EXDevMenuMotionInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = F108698A2448B11D00B7DC04 /* EXDevMenuMotionInterceptor.m */; };
@@ -2838,8 +2836,6 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Exponent/Pods-Exponent-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/ABI39_0_0React-Core/ABI39_0_0AccessibilityResources.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/ABI40_0_0React-Core/ABI40_0_0AccessibilityResources.bundle",
 				"${PODS_ROOT}/Amplitude/Sources/Amplitude/ComodoRsaDomainValidationCA.der",
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseMLVisionFaceModel/GoogleMVFaceDetectorResources.bundle",
@@ -2849,8 +2845,6 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABI39_0_0AccessibilityResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABI40_0_0AccessibilityResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ComodoRsaDomainValidationCA.der",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVFaceDetectorResources.bundle",
@@ -3484,7 +3478,7 @@
 					"-Xlinker",
 					"-no_objc_category_merging",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/ABI38_0_0yoga/ABI38_0_0Yoga.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/yoga/Yoga.modulemap\" -D DEBUG";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/yoga/Yoga.modulemap\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = host.exp.Exponent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3528,7 +3522,7 @@
 					"-Xlinker",
 					"-no_objc_category_merging",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/ABI38_0_0yoga/ABI38_0_0Yoga.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/yoga/Yoga.modulemap\" -D RELEASE";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/yoga/Yoga.modulemap\" -D RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = host.exp.Exponent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore host.exp.Exponent";
