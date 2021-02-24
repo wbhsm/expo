@@ -31,15 +31,10 @@ async function thisAction({
   const runAndroid = platform === 'android' || platform === 'both';
   const runIos = platform === 'ios' || platform === 'both';
   if (runIos) {
-    try {
-      await spawnAsync('fastlane', ['test'], {
-        cwd: Directories.getExpoRepositoryRootDir(),
-        stdio: 'inherit',
-      });
-    } catch (e) {
-      console.log('Something went wrong:');
-      console.log(e);
-    }
+    await spawnAsync('fastlane', ['test'], {
+      cwd: Directories.getExpoRepositoryRootDir(),
+      stdio: 'inherit',
+    });
   }
 
   if (runAndroid) {
