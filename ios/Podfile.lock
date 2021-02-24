@@ -1849,6 +1849,7 @@ PODS:
     - React-Core
     - UMCore
   - EXUpdates/Tests (0.5.0-rc.1):
+    - EXStructuredHeaders
     - React-Core
     - UMCore
   - EXVideoThumbnails (5.0.0):
