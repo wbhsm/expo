@@ -3,6 +3,7 @@ import chalk from 'chalk';
 import inquirer from 'inquirer';
 
 import * as Directories from '../Directories';
+import * as Packages from '../Packages';
 import { androidNativeUnitTests } from './AndroidNativeUnitTests';
 
 type PlatformName = 'android' | 'ios' | 'both';
@@ -31,10 +32,35 @@ async function thisAction({
   const runAndroid = platform === 'android' || platform === 'both';
   const runIos = platform === 'ios' || platform === 'both';
   if (runIos) {
-    await spawnAsync('fastlane', ['test'], {
-      cwd: Directories.getExpoRepositoryRootDir(),
-      stdio: 'inherit',
-    });
+    const packages = await Packages.getListOfPackagesAsync();
+    let errors: any[] = [];
+    for (const pkg of packages) {
+      if (
+        !pkg.isSupportedOnPlatform('ios') ||
+        !(await pkg.hasNativeTestsAsync('ios')) ||
+        !pkg.podspecName
+      ) {
+        continue;
+      }
+      try {
+        await spawnAsync('fastlane', ['test', `scheme:${pkg.podspecName}`], {
+          cwd: Directories.getExpoRepositoryRootDir(),
+          stdio: 'inherit',
+        });
+      } catch (error) {
+        errors.push(error);
+      }
+    }
+    if (errors.length) {
+      console.error('One or more iOS unit tests failed:');
+      for (const error of errors) {
+        console.error('stdout >', error.stdout);
+        console.error('stderr >', error.stderr);
+      }
+      throw new Error('Unit tests failed');
+    } else {
+      console.log('All unit tests passed!');
+    }
   }
 
   if (runAndroid) {

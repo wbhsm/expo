@@ -94,10 +94,10 @@ platform :ios do
     setup_circle_ci
   end
 
-  lane :test do
+  lane :test do |options|
     scan(
       workspace: "ios/Exponent.xcworkspace",
-      scheme: "Exponent",
+      scheme: (options[:scheme] ? options[:scheme] : "Exponent"),
       devices: ["iPhone 12"],
       clean: false,
     )

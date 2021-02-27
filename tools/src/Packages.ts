@@ -1,12 +1,12 @@
-import path from 'path';
 import fs from 'fs-extra';
 import glob from 'glob-promise';
+import path from 'path';
 
-import IosUnversionablePackages from './versioning/ios/unversionablePackages.json';
-import AndroidUnversionablePackages from './versioning/android/unversionablePackages.json';
+import { Podspec, readPodspecAsync } from './CocoaPods';
 import * as Directories from './Directories';
 import * as Npm from './Npm';
-import { Podspec, readPodspecAsync } from './CocoaPods';
+import AndroidUnversionablePackages from './versioning/android/unversionablePackages.json';
+import IosUnversionablePackages from './versioning/ios/unversionablePackages.json';
 
 const ANDROID_DIR = Directories.getAndroidDir();
 const IOS_DIR = Directories.getIosDir();
@@ -148,9 +148,12 @@ export class Package {
     } else if (platform === 'android') {
       return fs.existsSync(path.join(this.path, this.androidSubdirectory, 'build.gradle'));
     } else if (platform === 'ios') {
-      return fs
-        .readdirSync(path.join(this.path, this.iosSubdirectory))
-        .some((path) => path.endsWith('.podspec'));
+      return (
+        fs.existsSync(path.join(this.path, this.iosSubdirectory)) &&
+        fs
+          .readdirSync(path.join(this.path, this.iosSubdirectory))
+          .some((path) => path.endsWith('.podspec'))
+      );
     }
     return false;
   }
@@ -274,7 +277,10 @@ export class Package {
     if (platform === 'android') {
       return fs.pathExists(path.join(this.path, this.androidSubdirectory, 'src/test'));
     }
-    // TODO(tsapeta): Support ios and web.
+    if (platform === 'ios') {
+      return fs.pathExists(path.join(this.path, this.iosSubdirectory, 'Tests'));
+    }
+    // TODO(tsapeta): Support web.
     throw new Error(`"hasNativeTestsAsync" for platform "${platform}" is not implemented yet.`);
   }
 
